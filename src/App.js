@@ -187,7 +187,7 @@ function App() {
       <a href="mailto:mattporteous44@gmail.com">mattporteous44@gmail.com</a> or find me on any one of these pages: </p>
     <div className="social-icons">
       <a
-        href="https://www.linkedin.com/in/matthewporteous"
+        href="https://www.linkedin.com/in/matthew-porteous-23847a2b2/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
