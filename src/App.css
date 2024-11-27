@@ -1,209 +1,270 @@
 /* src/App.css */
 
+/* Define CSS Variables */
+:root {
+  --background-color: #121212;
+  --primary-color: #bb86fc;
+  --secondary-color: #b0b0b0;
+  --text-color: #ece9e9;
+  --border-color: #1e1e1e;
+  --font-family-main: "OB", monospace;
+  --font-family-heading: "OB101", monospace;
+  --font-family-body: "OBdot", "DotGothic16", monospace;
+  --font-family-regular: "OB101", "Pixelify Sans", monospace;
+  --transition-duration: 0.3s;
+}
+
 /* Reset default margins and paddings */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Set dark background and light text */
-  body {
-    background-color: #121212;
-    color: #e0e0e0;
-    font-family: "OffBitTrial", monospace; /* Apply OffBitTrial as the default font */
-  }
-  
-  /* Split Layout */
-  .app-container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  /* Sidebar Styles */
-  .sidebar {
-    width: 250px;
-    background-color: #121212; /* Match body's background for seamless look */
-    padding: 20px;
-    position: sticky; /* Use sticky positioning */
-    top: 0;
-    align-self: flex-start;
-    /* Optional: Add a subtle divider */
-    border-right: 1px solid #1e1e1e;
-  }
-  
-  .profile p {
-    font-size: 20px;
-    color: #b0b0b0;
-    font-family: "OB101","Pixelify Sans", monospace; /* Use Regular font */
-  }
-  /* Style links within paragraphs */
-p a {
-    color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    transition: color 0.3s;
-  }
-  
-  p a:hover {
-    color: #bb86fc;
-  }
-  
-  .toc {
-    margin-top: 40px;
-  }
-  
-  .toc ul {
-    list-style: none;
-  }
-  
-  .toc li {
-    margin-bottom: 20px;
-  }
-  
-  .toc a {
-    text-decoration: none;
-    color: #e0e0e0;
-    font-size: 18px;
-    font-family: "OB", monospace; /* Use Regular font */
-    transition: color 0.3s;
-    font-weight: 200;
-  }
-  
-  .toc a:hover {
-    color: #bb86fc;
-  }
-  
-  .toc a.active {
-    color: #bb86fc;
-    font-weight: bold;
-    font-family: "OB101bold", monospace; /* Highlighted links use Bold font */
-  }
-  
-  /* Content Styles */
-  .content {
-    flex-grow: 1; /* Allow content to fill the remaining space */
-    padding: 40px;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-  }
-  
-  .section {
-    margin-bottom: 80px;
-  }
-  
-  .section h2 {
-    font-size: 33.5px;
-    margin-bottom: 20px;
-    color: #ffffff;
-    font-family: "OB101", monospace;
-    font-weight: 500; /* Use Bold font for section titles */
-  }
-  
-  .section p {
-    line-height: 1.8;
-    margin-bottom: 7.5px;
-    font-size: 19px;
-    color: #e0e0e0;
-    font-family: "OBdot", "DotGothic16", monospace; 
-    font-weight: 700;
-    letter-spacing: 0.5px;/* Use Regular font for paragraphs */
-  }
-  
-  /* Scrollbar Styles */
-  .content::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  .content::-webkit-scrollbar-thumb {
-    background-color: #3a3a3a;
-    border-radius: 4px;
-  }
-  
-  /* Hover Effects and Transitions */
-  .toc a {
-    transition: color 0.3s;
-  }
-  
-  .section h2 {
-    transition: color 0.3s;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .app-container {
-      flex-direction: column;
-    }
-  
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-      border-right: none;
-      border-bottom: 1px solid #1e1e1e;
-    }
-  
-    .profile {
-      display: none; /* Hide profile on small screens */
-    }
-  
-    .toc {
-      margin-top: 0;
-    }
-  
-    .toc ul {
-      display: flex;
-    }
-  
-    .toc li {
-      margin: 0 10px;
-    }
-  
-    .content {
-      margin-left: 0;
-      margin-top: 0;
-      height: calc(100vh - 60px); /* Adjust based on header height */
-    }
-  }
+/* Set dark background and light text */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family-main); /* Apply OffBitTrial as the default font */
+}
+
+/* Split Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: var(--background-color);
+  padding: 20px;
+  align-self: stretch; /* Stretch to fill container height */
+  /* Optional: Add a subtle divider */
+  border-right: 1px solid var(--border-color);
+}
+
+/* Profile Text */
+.profile p {
+  font-size: 20px;
+  color: var(--secondary-color);
+  font-family: var(--font-family-regular); /* Use Regular font */
+}
+
+/* Style links within paragraphs */
+p a {
+  color: var(--text-color);
+  transition: color var(--transition-duration);
+}
+
+p a:hover {
+  color: var(--primary-color);
+}
+
+/* Table of Contents */
+.toc {
+  margin-top: 40px;
+}
+
+.toc ul {
+  list-style: none;
+}
+
+.toc li {
+  margin-bottom: 20px;
+}
+
+.toc a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: var(--font-family-regular); /* Use Regular font */
+  transition: color var(--transition-duration);
+  font-weight: 200;
+}
+
+.toc a:hover {
+  color: var(--primary-color);
+}
+
+.toc a.active {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-family: var(--font-family-heading); /* Highlighted links use Bold font */
+}
+
+/* Content Styles */
+.content {
+  flex-grow: 1; /* Allow content to fill the remaining space */
+  padding: 40px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.section {
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+.section h2 {
+  font-size: 33.5px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-family: var(--font-family-heading);
+  font-weight: 500; /* Use Bold font for section titles */
+  transition: color var(--transition-duration);
+}
+
+.section p {
+  line-height: 1.8;
+  margin-bottom: 7.5px;
+  font-size: 19px;
+  color: var(--text-color);
+  font-family: var(--font-family-body); 
+  font-weight: 700;
+  letter-spacing: 0.5px; /* Use Regular font for paragraphs */
+}
+
+/* Scrollbar Styles */
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #3a3a3a;
+  border-radius: 4px;
+}
+
+/* Hover Effects and Transitions */
+.toc a {
+  transition: color var(--transition-duration);
+}
+
+.section h2 {
+  transition: color var(--transition-duration);
+}
 
 /* Social Icons Styles */
 .social-icons {
-    margin-top: 20px;
-  }
-  
-  .social-icons a {
-    color: #e0e0e0;
-    font-size: 36px;
-    margin-right: 20px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #bb86fc;
-  }
-  
-  .social-icons a:last-child {
-    margin-right: 0;
-  }
-  
+  margin-top: 20px;
+}
 
-  /* Logo Styles */
+.social-icons a {
+  color: var(--text-color);
+  font-size: 36px;
+  margin-right: 20px;
+  transition: color var(--transition-duration), transform var(--transition-duration);
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
+}
+
+/* Logo Styles */
 .logo {
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .logo h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-family: "OB101", monospace;
-    font-weight: 425;
-    transition: all 0.3s ease;
-  }
-  
-  .logo:hover h1 {
-    /* color: #bb86fc;  */
-    transform: scale(1.005);
-    text-shadow: 0 0 5px #bb86fc;
+  text-decoration: none;
+  cursor: pointer;
+}
 
+.logo h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: var(--font-family-heading);
+  font-weight: 425;
+  transition: transform var(--transition-duration), text-shadow var(--transition-duration);
+}
+
+.logo:hover h1 {
+  transform: scale(1.005);
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
   }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .profile {
+    display: none; /* Hide profile on small screens */
+  }
+
+  .toc {
+    margin-top: 0;
+  }
+
+  .toc ul {
+    display: flex;
+  }
+
+  .toc li {
+    margin: 0 10px;
+  }
+
+  .content {
+    margin-left: 0;
+    margin-top: 0;
+    height: calc(100vh - 60px); /* Adjust based on header height */
+  }
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation delays to sections */
+.section:nth-child(1) {
+  --animation-delay: 0s;
+}
+
+.section:nth-child(2) {
+  --animation-delay: 0.1s;
+}
+
+.section:nth-child(3) {
+  --animation-delay: 0.2s;
+}
+
+/* Blurry Shape Styles */
+.blurry-shape {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(187, 134, 252, 0.3) 0%, rgba(187, 134, 252, 0) 70%);
+  pointer-events: none;
+  filter: blur(100px);
+  z-index: 0;
+  transform: translate(-150px, -150px);
+}
+
+/* Ensure other elements are above the blurry shape */
+.sidebar,
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Rest of your CSS */
