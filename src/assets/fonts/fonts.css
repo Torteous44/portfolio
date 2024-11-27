@@ -1,0 +1,45 @@
+/* src/assets/fonts/fonts.css */
+
+/* Import fonts */
+@font-face {
+    font-family: "OB";
+    src: url("./TTF/OffBitTrial-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "OBbold";
+    src: url("./TTF/OffBitTrial-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "OB101";
+    src: url("./TTF/OffBitTrial-101.ttf") format("truetype");
+    font-weight: 101;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "OB101bold";
+    src: url("./TTF/OffBitTrial-101Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "OBdot";
+    src: url("./TTF/OffBitTrial-Dot.ttf") format("truetype");
+    font-weight: normal;
+    font-style: dot;
+  }
+  
+  @font-face {
+    font-family: "OBdotbold";
+    src: url("./TTF/OffBitTrial-DotBold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  
