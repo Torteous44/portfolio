@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.eb6dffb5.css",
-    "main.js": "/static/js/main.4aea2a3d.js",
+    "main.css": "/static/css/main.7d85499e.css",
+    "main.js": "/static/js/main.21dfafa2.js",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
     "static/media/passwordmanager.png": "/static/media/passwordmanager.026abd763c19d336811f.png",
@@ -12,11 +12,11 @@
     "static/media/OffBitTrial-Bold.ttf": "/static/media/OffBitTrial-Bold.40e6a08cc5524151abbc.ttf",
     "static/media/dj-setlist.png": "/static/media/dj-setlist.0d41a0c281c661f26004.png",
     "index.html": "/index.html",
-    "main.eb6dffb5.css.map": "/static/css/main.eb6dffb5.css.map",
-    "main.4aea2a3d.js.map": "/static/js/main.4aea2a3d.js.map"
+    "main.7d85499e.css.map": "/static/css/main.7d85499e.css.map",
+    "main.21dfafa2.js.map": "/static/js/main.21dfafa2.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb6dffb5.css",
-    "static/js/main.4aea2a3d.js"
+    "static/css/main.7d85499e.css",
+    "static/js/main.21dfafa2.js"
   ]
 }
