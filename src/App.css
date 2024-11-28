@@ -1,4 +1,6 @@
 /* src/App.css */
+@import url('./assets/fonts/fonts.css');
+@import 'normalize.css';
 
 /* Define CSS Variables */
 :root {
@@ -25,7 +27,9 @@
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: var(--font-family-main); /* Apply OffBitTrial as the default font */
+  font-family: var(--font-family-main); 
+  -webkit-font-smoothing: antialiased; /* For Safari and Chrome */
+  -moz-osx-font-smoothing: grayscale;  /* For Firefox */
 }
 
 /* Split Layout */
@@ -79,6 +83,7 @@ p a:hover {
   color: var(--text-color);
   font-size: 18px;
   font-family: var(--font-family-regular); 
+
   transition: color var(--transition-duration);
   font-weight: 200;
 }
@@ -256,6 +261,7 @@ p a:hover {
   background: radial-gradient(circle, rgba(187, 134, 252, 0.3) 0%, rgba(187, 134, 252, 0) 70%);
   pointer-events: none;
   filter: blur(500px);
+  -webkit-filter: blur(50px); /* For Safari and older Chrome versions */
   z-index: 0;
   transform: translate(900px, 900px);
   opacity: 0.3; 

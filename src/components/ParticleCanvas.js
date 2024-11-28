@@ -11,6 +11,7 @@ const ParticleCanvas = () => {
   const lastMouseMoveTime = useRef(Date.now());
 
   useEffect(() => {
+    
     // Detect if the device supports touch
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (isTouchDevice) return; // Don't render particle effect on touch devices
@@ -96,7 +97,7 @@ const ParticleCanvas = () => {
 
       //speed thresholds
       const slowSpeed = 100; // pps
-      const fastSpeed = 200; // 
+      const fastSpeed = 200;  
 
       let numParticles = 0; // Default for very slow movement
 
@@ -161,7 +162,7 @@ const ParticleCanvas = () => {
         ctx.fillStyle = particle.color;
         ctx.fill();
 
-        // Remove dead particles
+
         if (particle.lifespan <= 0 || particle.size < 0.5) {
           particles.current.splice(index, 1);
         }
@@ -172,7 +173,7 @@ const ParticleCanvas = () => {
 
     updateParticles();
 
-    // Cleanup on unmount
+
     return () => {
       window.removeEventListener('resize', setSize);
       window.removeEventListener('mousemove', handleMouseMove);
