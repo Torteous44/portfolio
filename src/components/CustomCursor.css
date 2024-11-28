@@ -1,18 +1,22 @@
 /* src/components/CustomCursor.css */
 
-/* Main Custom Cursor */
 .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
-    width: 15px;
-    height: 15px;
-    background-color: var(--primary-color); /* Use your primary color */
+    width: 7.5px;
+    height: 7.5px;
+    background-color: rgba(187, 134, 252, 0.9); /* Purple color */
     border-radius: 50%;
-    pointer-events: none; /* Ensure cursor doesn't block interactions */
+    pointer-events: none;
     transform: translate(-50%, -50%);
-    z-index: 9999; /* Ensure cursor is on top */
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    mix-blend-mode: difference; /* Optional: For better visibility on varying backgrounds */
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 10000; 
+    mix-blend-mode: difference; 
   }
   
+  .custom-cursor.cursor-hover {
+    transform: translate(-50%, -50%) scale(4); /* Scale up by 2x */
+  }
+  
+

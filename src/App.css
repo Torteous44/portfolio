@@ -40,7 +40,7 @@ body {
   background-color: var(--background-color);
   padding: 20px;
   align-self: stretch; /* Stretch to fill container height */
-  /* Optional: Add a subtle divider */
+
   border-right: 1px solid var(--border-color);
 }
 
@@ -48,7 +48,7 @@ body {
 .profile p {
   font-size: 20px;
   color: var(--secondary-color);
-  font-family: var(--font-family-regular); /* Use Regular font */
+  font-family: var(--font-family-regular); 
 }
 
 /* Style links within paragraphs */
@@ -78,7 +78,7 @@ p a:hover {
   text-decoration: none;
   color: var(--text-color);
   font-size: 18px;
-  font-family: var(--font-family-regular); /* Use Regular font */
+  font-family: var(--font-family-regular); 
   transition: color var(--transition-duration);
   font-weight: 200;
 }
@@ -114,7 +114,7 @@ p a:hover {
   margin-bottom: 20px;
   color: #ffffff;
   font-family: var(--font-family-heading);
-  font-weight: 500; /* Use Bold font for section titles */
+  font-weight: 500; 
   transition: color var(--transition-duration);
 }
 
@@ -125,7 +125,7 @@ p a:hover {
   color: var(--text-color);
   font-family: var(--font-family-body); 
   font-weight: 700;
-  letter-spacing: 0.5px; /* Use Regular font for paragraphs */
+  letter-spacing: 0.5px; 
 }
 
 /* Scrollbar Styles */
@@ -249,16 +249,19 @@ p a:hover {
 /* Blurry Shape Styles */
 .blurry-shape {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 300px;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
   background: radial-gradient(circle, rgba(187, 134, 252, 0.3) 0%, rgba(187, 134, 252, 0) 70%);
   pointer-events: none;
-  filter: blur(100px);
+  filter: blur(500px);
   z-index: 0;
-  transform: translate(-150px, -150px);
+  transform: translate(900px, 900px);
+  opacity: 0.3; 
+
 }
+
 
 /* Ensure other elements are above the blurry shape */
 .sidebar,
@@ -268,13 +271,12 @@ p a:hover {
 }
 
 
-/* src/App.css */
 
 /* Hide the default cursor globally */
 body {
   cursor: none;
 }
-/* Avoid overriding the global cursor */
-button, a, input {
-  cursor: none; /* Remove or adjust this if you want to hide cursor on these elements as well */
+
+button, a, input, h1 {
+  cursor: none; 
 }

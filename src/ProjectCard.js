@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProjectCard.css'; // We'll create this file for styling
+import './ProjectCard.css'; 
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 function ProjectCard({ title, description, image, technologies, githubLink, liveDemoLink }) {

@@ -3,17 +3,18 @@ import './App.css';
 import './assets/fonts/fonts.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import ProjectCard from './ProjectCard';
-import CustomCursor from './components/CustomCursor'; // Import the CustomCursor
+import CustomCursor from './components/CustomCursor'; 
 import ParticleCanvas from './components/ParticleCanvas';
+
+
 function App() {
   const [activeSection, setActiveSection] = useState('about');
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   // References to each section
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-
-  // Reference to the content area
   const contentRef = useRef(null);
 
   // Reference for the blurry shape
@@ -86,6 +87,27 @@ function App() {
     };
   }, []);
 
+
+
+  useEffect(() => {
+    const checkIfTouchDevice = () => {
+      const touchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      setIsTouchDevice(touchDevice);
+    };
+
+    checkIfTouchDevice();
+
+    // Optionally, listen for changes (e.g., if a user connects a mouse to a tablet)
+    window.matchMedia('(hover: none) and (pointer: coarse)').addEventListener('change', checkIfTouchDevice);
+
+    // Cleanup listener on unmount
+    return () => {
+      window.matchMedia('(hover: none) and (pointer: coarse)').removeEventListener('change', checkIfTouchDevice);
+    };
+  }, []);
+
+
+
   // Projects data
   const projects = [
     {
@@ -116,6 +138,8 @@ function App() {
     },
   ];
 
+
+
   // Reusable navigation click handler
   const handleNavClick = (e, sectionRef) => {
     e.preventDefault();
@@ -126,18 +150,20 @@ function App() {
     <div className="app-container">
       <div className="blurry-shape" ref={blurryShapeRef}></div>
 
-      <CustomCursor /> {/* Add the CustomCursor component */}
-      <ParticleCanvas /> {/* Particle Effect Component */}
+      {!isTouchDevice && <ParticleCanvas />}
+    
+      {!isTouchDevice && <CustomCursor />}
 
-      {/* Left Sidebar */}
       <aside className="sidebar">
         <div className="profile">
-          <a href="#top" onClick={() => scrollToSection(aboutRef)} className="logo">
+          <a href="#top" onClick={() => scrollToSection(aboutRef)} className="logo" >
             <h1>Matthew Porteous</h1>
           </a>
           <p>CS and AI student <p></p> IE University</p>
         </div>
+
         {/* Navigation Links */}
+
         <nav className="toc">
           <ul>
             <li>
@@ -171,7 +197,7 @@ function App() {
         </nav>
       </aside>
 
-      {/* Right Scrollable Content */}
+      {/* Right-side Scrollable Content */}
       <main className="content" ref={contentRef}>
         <section id="about" className="section" ref={aboutRef}>
           <h2>About Me</h2>
