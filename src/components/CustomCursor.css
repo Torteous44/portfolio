@@ -1,0 +1,18 @@
+/* src/components/CustomCursor.css */
+
+/* Main Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--primary-color); /* Use your primary color */
+    border-radius: 50%;
+    pointer-events: none; /* Ensure cursor doesn't block interactions */
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Ensure cursor is on top */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    mix-blend-mode: difference; /* Optional: For better visibility on varying backgrounds */
+  }
+  

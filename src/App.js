@@ -3,7 +3,8 @@ import './App.css';
 import './assets/fonts/fonts.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import ProjectCard from './ProjectCard';
-
+import CustomCursor from './components/CustomCursor'; // Import the CustomCursor
+import ParticleCanvas from './components/ParticleCanvas';
 function App() {
   const [activeSection, setActiveSection] = useState('about');
 
@@ -16,7 +17,7 @@ function App() {
   const contentRef = useRef(null);
 
   // Reference for the blurry shape
-  const blurryShapeRef = useRef(null); // Declare useRef at the top level
+  const blurryShapeRef = useRef(null); 
 
   // Function to scroll to a section
   const scrollToSection = (sectionRef) => {
@@ -101,11 +102,18 @@ function App() {
       description:
         'A project that uses the Shazam and SoundCloud APIs to create a setlist of songs used in a DJ’s set.',
       image: require('./assets/images/dj-setlist.png'),
-      technologies: ['JavaScript', 'Node.js', 'Shazam API', 'SoundCloud API'],
+      technologies: [ 'Node.js', 'Shazam API', 'SoundCloud API','Python',],
       githubLink: 'https://github.com/Torteous44/Soundcloud',
       liveDemoLink: null,
     },
-    // Add more projects as needed
+    {
+      title: 'Command Line Password Manager Written in C',
+      description: 'Allows users to securely store and manage their passwords for various websites or services. The passwords are encrypted using a master password and an encryption key, providing an additional layer of security.',
+      image: require('./assets/images/passwordmanager.png'),
+      technologies: ['C'],
+      githubLink: 'https://github.com/Torteous44/PasswordManager',
+
+    },
   ];
 
   // Reusable navigation click handler
@@ -118,6 +126,8 @@ function App() {
     <div className="app-container">
       <div className="blurry-shape" ref={blurryShapeRef}></div>
 
+      <CustomCursor /> {/* Add the CustomCursor component */}
+      <ParticleCanvas /> {/* Particle Effect Component */}
 
       {/* Left Sidebar */}
       <aside className="sidebar">

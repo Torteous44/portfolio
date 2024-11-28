@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.ea907a39.css",
-    "main.js": "/static/js/main.b13f53ef.js",
+    "main.js": "/static/js/main.f0c41612.js",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
+    "static/media/passwordmanager.png": "/static/media/passwordmanager.026abd763c19d336811f.png",
     "static/media/OffBitTrial-Dot.ttf": "/static/media/OffBitTrial-Dot.9cd022824e9f6c244356.ttf",
     "static/media/OffBitTrial-101.ttf": "/static/media/OffBitTrial-101.cc8162d097fb44441860.ttf",
     "static/media/OffBitTrial-Regular.ttf": "/static/media/OffBitTrial-Regular.99fe4ca76c78783c3c7c.ttf",
@@ -12,10 +13,10 @@
     "static/media/dj-setlist.png": "/static/media/dj-setlist.0d41a0c281c661f26004.png",
     "index.html": "/index.html",
     "main.ea907a39.css.map": "/static/css/main.ea907a39.css.map",
-    "main.b13f53ef.js.map": "/static/js/main.b13f53ef.js.map"
+    "main.f0c41612.js.map": "/static/js/main.f0c41612.js.map"
   },
   "entrypoints": [
     "static/css/main.ea907a39.css",
-    "static/js/main.b13f53ef.js"
+    "static/js/main.f0c41612.js"
   ]
 }

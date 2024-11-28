@@ -267,4 +267,14 @@ p a:hover {
   z-index: 1;
 }
 
-/* Rest of your CSS */
+
+/* src/App.css */
+
+/* Hide the default cursor globally */
+body {
+  cursor: none;
+}
+/* Avoid overriding the global cursor */
+button, a, input {
+  cursor: none; /* Remove or adjust this if you want to hide cursor on these elements as well */
+}
