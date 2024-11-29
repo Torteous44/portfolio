@@ -3,13 +3,13 @@
 # Matthew Porteous - Personal Portfolio
 
 
-## 📖 Overview
+### 📖 Overview
 
 Welcome to my personal portfolio! This website showcases my projects, skills, and professional background. Built with React, it features a modern and responsive design with interactive elements to provide an engaging user experience.
 
 
----
-## 📫 Contact
+
+### 📫 Contact
 
 I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
 
