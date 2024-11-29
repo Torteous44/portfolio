@@ -56,7 +56,7 @@ function App() {
     };
   }, []);
 
-  // Blurry Shape Animation
+
   useEffect(() => {
     let mouseX = 0;
     let mouseY = 0;
@@ -97,10 +97,10 @@ function App() {
 
     checkIfTouchDevice();
 
-    // Optionally, listen for changes (e.g., if a user connects a mouse to a tablet)
+
     window.matchMedia('(hover: none) and (pointer: coarse)').addEventListener('change', checkIfTouchDevice);
 
-    // Cleanup listener on unmount
+
     return () => {
       window.matchMedia('(hover: none) and (pointer: coarse)').removeEventListener('change', checkIfTouchDevice);
     };
@@ -249,6 +249,12 @@ function App() {
             </a>
           </div>
         </section>
+        <footer className="footer">
+        <p>
+          Built with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a> |
+          <a href="https://github.com/Torteous44/portfolio" target="_blank" rel="noopener noreferrer"> View on GitHub</a>
+        </p>
+      </footer>
       </main>
     </div>
   );

@@ -63,6 +63,7 @@ p a {
 
 p a:hover {
   color: var(--primary-color);
+
 }
 
 /* Table of Contents */
@@ -90,20 +91,23 @@ p a:hover {
 
 .toc a:hover {
   color: var(--primary-color);
+
 }
 
 .toc a.active {
   color: var(--primary-color);
   font-weight: bold;
-  font-family: var(--font-family-heading); /* Highlighted links use Bold font */
+  font-family: var(--font-family-heading); /*links*/
+
 }
 
-/* Content Styles */
+
 .content {
-  flex-grow: 1; /* Allow content to fill the remaining space */
+  flex-grow: 1; 
   padding: 40px;
   overflow-y: auto;
   scroll-behavior: smooth;
+  padding-bottom: 5px;
 }
 
 .section {
@@ -131,6 +135,7 @@ p a:hover {
   font-family: var(--font-family-body); 
   font-weight: 700;
   letter-spacing: 0.5px; 
+
 }
 
 /* Scrollbar Styles */
@@ -238,6 +243,8 @@ p a:hover {
   }
 }
 
+
+
 /* Apply animation delays to sections */
 .section:nth-child(1) {
   --animation-delay: 0s;
@@ -285,4 +292,19 @@ body {
 
 button, a, input, h1 {
   cursor: none; 
+}
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  color: #979696;
+  position: relative;
+
+  margin-top: 20px; 
+
+}
+
+.footer a {
+  text-decoration: none;
+  margin-left: 5px;
 }

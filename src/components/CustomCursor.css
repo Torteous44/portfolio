@@ -16,10 +16,8 @@
   }
   
   .custom-cursor.cursor-hover {
-    transform: translate(-50%, -50%) scale(4); /* Scale up by 2x */
+    transform: translate(-50%, -50%) scale(4);
+    border-radius: 40%;
   }
-  .h1 custom-cursor.cursor-hover{
-    transform: translate(-50%, -50%) scale(8)
-  }
-  
+
 
