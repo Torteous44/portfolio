@@ -15,7 +15,7 @@ I'm always open to discussing new projects, creative ideas, or opportunities to 
 
 - **Email:** [mattporteous44@gmail.com](mailto:mattporteous44@gmail.com)
 - **LinkedIn:** [Matthew Porteous](https://www.linkedin.com/in/matthew-porteous-23847a2b2/)
-- **GitHub:** [torteous44](https://github.com/torteous44)
+
 
 
 
