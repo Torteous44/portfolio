@@ -24,8 +24,8 @@ body.light-mode {
   --border-color: #c3c3c3;
   --font-family-main: "HemVar", monospace; /* Use the HemVar font */
   --font-family-body: "HemVar", monospace;
-  --font-family-heading: "HemVar" , monospace;
-  --font-family-regular: "HemVar", monospace;
+  --font-family-heading: "fragGlare" , monospace;
+  --font-family-regular: "fragGlareli", monospace;
 }
 
 /* Reset default margins and paddings */
@@ -33,6 +33,8 @@ body.light-mode {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+
 }
 
 /* General Body Styling */
@@ -63,6 +65,10 @@ body {
   font-size: 20px;
   color: var(--secondary-color);
   font-family: var(--font-family-regular);
+}
+
+body.light-mode .profile p{
+  font-size: 15px
 }
 
 p a {
@@ -111,6 +117,7 @@ body.light-mode .toc a.active {
   border-radius: 4px; /* Optional rounded corners */
   padding: 4px; /* Optional padding for spacing */
   background-color: rgba(255, 255, 255, 0.8); /* Optional light background */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
 
 .content {
@@ -140,8 +147,8 @@ body.light-mode .toc a.active {
 
 
 body.light-mode .section h2{
-  font-family: "HemVarli", serif;
-  font-weight: bold;
+  font-family: "fragGlare", serif;
+  font-weight: 200;
 }
 .section p {
   line-height: 1.8;
@@ -156,7 +163,7 @@ body.light-mode .section h2{
 /* Light mode specific styling */
 body.light-mode .section p {
   font-family: "HemVarli", serif; 
-  font-weight: 800;/* Slightly less weight in light mode */
+  font-weight: 350;/* Slightly less weight in light mode */
 }
 
 
@@ -198,11 +205,18 @@ body.light-mode .section p {
   color: var(--text-color);
   font-family: var(--font-family-heading);
   font-weight: 425;
-  transition: transform var(--transition-duration), text-shadow var(--transition-duration), font-size 0.1s ease;
+  transition: transform var(--transition-duration), text-shadow var(--transition-duration), font-size 0.1s ease, font-weight 0.1s ease;
 }
 
 body.light-mode .logo h1 {
-  font-size: 42px; /* Slightly smaller font size for light mode */
+  font-size: 42px;
+  transition: transform 0.3s ease, font-weight 0.1s ease, font-size 0.3s ease; /* Set smooth transitions */
+}
+body.light-mode .logo:hover h1   {
+  transform: scale(1.0075);
+
+  text-shadow: none;
+  
 }
 
 
@@ -288,7 +302,7 @@ body.light-mode .logo h1 {
 body.light-mode .blurry-shape {
   background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
   filter: blur(100px);
-  opacity: 0.25;
+  opacity: 0.2;
 }
 
 
@@ -306,6 +320,7 @@ body.light-mode .blurry-shape {
   color: var(--secondary-color);
   position: relative;
   margin-top: 20px;
+
 }
 
 .footer a {
@@ -313,51 +328,214 @@ body.light-mode .blurry-shape {
   margin-left: 5px;
 }
 
+
 .theme-toggle-wrapper {
-  position: fixed;
-  bottom: 20px; /* Distance from the bottom */
-  left: 20px; /* Distance from the left */
+  position: absolute;
+  bottom: 16.5px;
+  left: 25px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   cursor: pointer;
-  gap: 8px; /* Space between text and circle */
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: inherit; /* Inherits text color from theme */
-  background-color: rgba(0, 0, 0, 0.2); /* Optional background for better visibility */
-  padding: 8px 12px; /* Optional padding for a neat look */
-  border-radius: 12px; /* Rounded edges */
-  transition: background-color 0.3s ease; /* Smooth background transition */
-  touch-action: manipulation; /* Ensure touch works properly */
+  gap: 8px;
+  font-family: var(--font-family-body, sans-serif);
+  font-size: 11px; /* Default text size */
+  color: var(--text-color); /* Matches the website's text color */
+  background-color: var(--background-color); /* Matches the website's background */
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color); /* Matches the border color in current theme */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: all 0.3s ease-in-out; /* Smooth transitions */
   z-index: 100000;
 }
 
+.theme-toggle-wrapper:hover {
+  background-color: var(--primary-color); /* Matches primary color on hover */
+  color: var(--background-color); /* Contrast text on hover */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  transform: translateY(-1px); /* Lift effect */
+}
+
 .theme-toggle-text {
-  font-weight: 500;
+  font-weight: 600;
+  font-family: var(--font-family-heading, sans-serif); /* Matches heading font */
+  letter-spacing: 0.5px;
+  transition: font-size 0.3s ease, padding 0.3s ease; /* Smooth transition for font size and alignment */
 }
 
+/* Circle Styling */
 .theme-toggle-circle {
-  width: 14px; /* Size of the circle */
-  height: 16px;
+  width: 14px; /* Slightly larger for better visibility */
+  height: 14px;
   border-radius: 50%;
-  transition: background-color 0.3s ease; /* Smooth transition */
-  background-color: var(--text-color); /* Dynamic based on mode */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 2px solid var(--border-color); /* Matches the border color */
 }
 
-/* Ensure visibility for touch devices */
+/* Circle Styling for Light and Dark Modes */
 body.light-mode .theme-toggle-circle {
-  background-color: black;
+  background-color: #ffffff; /* White circle in light mode */
 }
 
 body.dark-mode .theme-toggle-circle {
-  background-color: white;
+  background-color: #000000; /* Black circle in dark mode */
+}
+
+.theme-toggle-wrapper:hover .theme-toggle-circle {
+  transform: scale(1.2); /* Scale up on hover */
+}
+
+/* Light Mode Specific Styling */
+body.light-mode .theme-toggle-wrapper {
+  background-color: rgba(0, 0, 0, 0.05); /* Subtle light background for contrast */
+  color: var(--text-color);
+}
+
+body.light-mode .theme-toggle-text {
+  font-size: 11px; /* Default size in light mode */
+  color: var(--text-color); /* Matches text color */
+}
+
+/* Dark Mode Specific Styling */
+body.dark-mode .theme-toggle-wrapper {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle dark background for contrast */
+  color: var(--text-color);
+}
+
+body.dark-mode .theme-toggle-text {
+  font-size: 13px; /* Slightly larger text size in dark mode */
+  padding-top: 2px; /* Adjust text position down by 2px */
+  color: var(--text-color); /* Matches text color */
 }
 
 
-body.light-mode .footer{
-  font-family: 'HemVarLi', serif;
+@media (max-width: 768px) {
+  .theme-toggle-wrapper {
+    top: 15px; /* Distance from the top */
+    right: -7px; /* Distance from the left */
+    bottom: auto; /* Reset bottom position */
+    left: auto; /* Reset right position */
+    transform: scale(0.7);
+    border-width: 0cap;
+    font-family: 'HemVar', sans-serif;
+
+  }
+}/* Counter Tooltip Styles */
+#counter-tooltip {
+  position: absolute; /* Positioned within the sidebar */
+  bottom: 20px; /* Just above the theme toggle button */
+  left: 72%; /* Dynamically center horizontally */
+  cursor: pointer;
+  height: 20px;
+  border-radius: 6px;
+  font-size: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px; /* Dynamic horizontal padding for resizing */
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--tooltip-container-bg); /* Dynamically set background color */
+  color: var(--tooltip-text-color); /* Dynamically set text color */
+  min-width: 20px; /* Ensures a minimum size */
+  z-index: 2147483647; /* Highest possible z-index */
+  font-family: var(--font-family-regular);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+
 }
 
-body.light-mode .footer a {
-  text-decoration: underline;
+#counter-tooltip:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+#counter-tooltip .tooltip {
+  position: absolute; /* Positioned relative to the tooltip container */
+  top: -190px; /* Adjusted dynamically based on the button's size */
+  left: 50%; /* Center the tooltip relative to the button */
+  transform: translateX(-50%); /* Adjust horizontally for centering */
+  opacity: 0;
+
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--tooltip-bg); /* Dynamically set tooltip background */
+  color: var(--tooltip-text-color); /* Dynamically set tooltip text color */
+  border-radius: 4px;
+  padding: 18px 20px;
+  font-size: 15px;
+  text-align: center;
+  width: auto; /* Allow tooltip to resize dynamically */
+  z-index: 2147483647; /* Highest z-index to ensure it renders on top */
+  font-family: var(--font-family-regular);
+  font-weight: bold;
+}
+
+#counter-tooltip .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 0.6em;
+  width: 0.6em;
+  bottom: -0.3em; /* Position the arrow below the tooltip */
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg); /* Center and rotate to form an arrow */
+  background-color: var(--tooltip-bg); /* Match tooltip background */
+  z-index: 2147483647;
+}
+
+#counter-tooltip:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Light Mode Overrides */
+body.light-mode #counter-tooltip {
+  background-color: rgba(0, 0, 0, 0.05); /* White background for container in light mode */
+  color: #000000; /* Black text */
+}
+
+body.light-mode #counter-tooltip .tooltip {
+  background-color: #5a5a5a; /* Black background for tooltip in light mode */
+  color: #ffffff; /* White text */
+  font-weight: 500;
+}
+
+body.light-mode #counter-tooltip .tooltip::before {
+  background-color: #5a5a5a; /* Match tooltip background */
+}
+
+/* Dark Mode Overrides */
+body.dark-mode #counter-tooltip {
+  background-color: rgba(255, 255, 255, 0.1);/* Black background for container in dark mode */
+  color: #ffffff; /* White text */
+  padding-top: 3px;
+}
+
+body.dark-mode #counter-tooltip .tooltip {
+  background-color: var(--text-color); /* White background for tooltip in dark mode */
+  color: #000000; /* Black text */
+}
+
+body.dark-mode #counter-tooltip .tooltip::before {
+  background-color: #ece9e9; /* Match tooltip background */
+}
+
+/* Hide Counter Tooltip on Mobile */
+@media (max-width: 768px) {
+  #counter-tooltip {
+    display: none;
+  }
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Outer border */
+  border-top-color: #fff; /* Top border color */
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

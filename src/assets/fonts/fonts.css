@@ -59,7 +59,16 @@
   
 
   @font-face {
-    font-family: "HemVarli";
+    font-family: "fragGlare";
+    src: url("./TTF/fragGlare.otf") format("truetype");
+    font-weight: normal;
+
+    font-display: swap;
+  }
+  
+
+  @font-face {
+    font-family: "fragReg";
     src: url("./TTF/fragReg.otf") format("truetype");
     font-weight: normal;
 
@@ -67,3 +76,10 @@
   }
   
   
+  @font-face {
+    font-family: "fragGlareli";
+    src: url("./TTF/fragGlareLi.otf") format("truetype");
+    font-weight: normal;
+
+    font-display: swap;
+  }

@@ -7,6 +7,7 @@ const ParticleCanvas = ({ theme }) => {
   const animationFrameId = useRef(null);
   const lastCursorPosition = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
   const lastMouseMoveTime = useRef(Date.now());
+  const ropeSegments = useRef([]);
 
   useEffect(() => {
     // Detect if the device supports touch
@@ -117,11 +118,22 @@ const ParticleCanvas = ({ theme }) => {
 
       const emissionX = e.clientX + oppositeDirection.x * emissionRadius;
       const emissionY = e.clientY + oppositeDirection.y * emissionRadius;
+      if (theme === 'dark') {
+        emitParticles(emissionX, emissionY, oppositeDirection, numParticles);
+      }
 
-      emitParticles(emissionX, emissionY, oppositeDirection, numParticles);
-
+      if (theme === 'light') {
+        ropeSegments.current.push({ x: e.clientX, y: e.clientY });
+      
+        // Limit the number of segments to avoid performance issues
+        if (ropeSegments.current.length > 20) { // Adjust "20" to control the rope's length
+          ropeSegments.current.shift();
+        }
+      }
       lastCursorPosition.current = { x: e.clientX, y: e.clientY };
       lastMouseMoveTime.current = currentTime;
+
+      
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -151,6 +163,8 @@ const ParticleCanvas = ({ theme }) => {
 
         if (particle.lifespan <= 0 || particle.size < 0.5) {
           particles.current.splice(index, 1);
+
+        
         }
       });
 

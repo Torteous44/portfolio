@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
-
-
 import './assets/fonts/fonts.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import ProjectCard from './ProjectCard';
@@ -15,7 +13,40 @@ function App() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'dark'; // Default to dark mode
   });
+    // ** Counter State ** 
+    const [counter, setCounter] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    // Fetch the counter value from the backend
+    const fetchCounter = async () => {
+      try {
+        const response = await fetch('https://portfolio-backend-muddy-sun-3794.fly.dev/count');
+        const data = await response.json();
+        setCounter(data.count);
+      } catch (error) {
+        console.error('Error fetching counter:', error);
+      } finally {
+        setLoading(false); // Loading complete
+      }
+    };
   
+    // Increment the counter in the backend
+    const incrementCounter = async () => {
+      try {
+        const response = await fetch('https://portfolio-backend-muddy-sun-3794.fly.dev/increment', {
+          method: 'POST',
+        });
+        const data = await response.json();
+        setCounter(data.count);
+      } catch (error) {
+        console.error('Error incrementing counter:', error);
+      }
+    };
+  
+    useEffect(() => {
+      fetchCounter(); // Fetch the initial counter value
+    }, []);
+
     // Dynamically load CSS for the selected theme
     useEffect(() => {
       console.log('Applying theme class:', theme); // Debug log
@@ -144,15 +175,15 @@ function App() {
       githubLink: 'https://github.com/Torteous44/ExpenseTracker',
       liveDemoLink: 'https://torteous44.github.io/ExpenseTracker/',
     },
-    {
-      title: 'Shazam and SoundCloud DJ Setlist Generator',
-      description:
-        'A project that uses the Shazam and SoundCloud APIs to create a setlist of songs used in a DJ’s set.',
-      image: require('./assets/images/dj-setlist.png'),
-      technologies: [  'Shazam API', 'SoundCloud API','Python',],
-      githubLink: 'https://github.com/Torteous44/Soundcloud',
-      liveDemoLink: null,
-    },
+    // {
+    //   title: 'Shazam and SoundCloud DJ Setlist Generator',
+    //   description:
+    //     'A project that uses the Shazam and SoundCloud APIs to create a setlist of songs used in a DJ’s set.',
+    //   image: require('./assets/images/dj-setlist.png'),
+    //   technologies: [  'Shazam API', 'SoundCloud API','Python',],
+    //   githubLink: 'https://github.com/Torteous44/Soundcloud',
+    //   liveDemoLink: null,
+    // },
     {
       title: 'Command Line Password Manager Written in C',
       description: 'Allows users to securely store and manage their passwords for various websites or services. The passwords are encrypted using a master password and an encryption key, providing an additional layer of security.',
@@ -161,6 +192,14 @@ function App() {
       githubLink: 'https://github.com/Torteous44/PasswordManager',
 
     },
+    {
+      title: 'Terminal-Based Chat Application in C',
+      description: 'A real-time multi-client chat application built using C with support for public and private chat rooms, direct messaging, and user management. The application uses socket programming and multithreading for seamless communication between the server and multiple clients.',
+      image: require('./assets/images/terminalchat.png'),
+      technologies: ['C', 'Socket Programming', 'Multithreading'],
+      githubLink: 'https://github.com/Torteous44/TerminalChat',
+    }
+    
   ];
 
 
@@ -220,6 +259,25 @@ function App() {
             </li>
           </ul>
         </nav>
+
+  {/* Counter Tooltip */}
+    <div>
+      <div id="counter-tooltip" onClick={incrementCounter}>
+        {loading ? (
+          <div className="spinner"></div> // Render spinner while loading
+        ) : (
+          <span>{counter}</span> // Display counter after loading
+        )}
+        <div className="tooltip">
+          This button has been clicked {counter} times globally.
+        </div>
+      </div>
+    </div>
+
+
+
+
+
         <button className="theme-toggle-wrapper" onClick={toggleTheme}>
   <span className="theme-toggle-text">
     {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
@@ -288,6 +346,9 @@ function App() {
             </a>
           </div>
         </section>
+
+
+
         <footer className="footer">
         <p>
           Built with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a> |
