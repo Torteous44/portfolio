@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.58e14dca.css",
+    "main.css": "/static/css/main.d0a9acd5.css",
     "main.js": "/static/js/main.3397b3a5.js",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
@@ -16,11 +16,11 @@
     "static/media/terminalchat.png": "/static/media/terminalchat.38cf748a1c970db2e0fe.png",
     "static/media/OffBitTrial-Bold.ttf": "/static/media/OffBitTrial-Bold.40e6a08cc5524151abbc.ttf",
     "index.html": "/index.html",
-    "main.58e14dca.css.map": "/static/css/main.58e14dca.css.map",
+    "main.d0a9acd5.css.map": "/static/css/main.d0a9acd5.css.map",
     "main.3397b3a5.js.map": "/static/js/main.3397b3a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.58e14dca.css",
+    "static/css/main.d0a9acd5.css",
     "static/js/main.3397b3a5.js"
   ]
 }
