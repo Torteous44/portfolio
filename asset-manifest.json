@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.c92ab344.css",
+    "main.css": "/static/css/main.5c1bf2fb.css",
     "main.js": "/static/js/main.23855128.js",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
@@ -16,11 +16,11 @@
     "static/media/OffBitTrial-Bold.ttf": "/static/media/OffBitTrial-Bold.40e6a08cc5524151abbc.ttf",
     "static/media/dj-setlist.png": "/static/media/dj-setlist.0d41a0c281c661f26004.png",
     "index.html": "/index.html",
-    "main.c92ab344.css.map": "/static/css/main.c92ab344.css.map",
+    "main.5c1bf2fb.css.map": "/static/css/main.5c1bf2fb.css.map",
     "main.23855128.js.map": "/static/js/main.23855128.js.map"
   },
   "entrypoints": [
-    "static/css/main.c92ab344.css",
+    "static/css/main.5c1bf2fb.css",
     "static/js/main.23855128.js"
   ]
 }
