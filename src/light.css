@@ -1,0 +1,95 @@
+@import url('./assets/fonts/fonts.css');
+@import 'normalize.css';
+
+/* Override CSS Variables for Light Mode */
+:root {
+  --background-color: #ffffff; /* Light background */
+  --primary-color: #6200ea; /* Purple for links and highlights */
+  --secondary-color: #666666; /* Subdued text color */
+  --text-color: #000000; /* Black text */
+  --border-color: #e0e0e0; /* Light gray borders */
+  --font-family-main: "HemVar", monospace;
+  --font-family-heading: "HemVar", monospace;
+  --font-family-body: "HemVar", "DotGothic16", monospace;
+  --font-family-regular: "OB101", "Pixelify Sans", monospace;
+  --transition-duration: 0.3s;
+}
+
+/* Apply Light Mode Styling */
+body.light-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+/* Sidebar Styling for Light Mode */
+.sidebar {
+  background-color: var(--background-color);
+  border-right: 1px solid var(--border-color);
+}
+
+.profile p {
+  color: var(--secondary-color);
+}
+
+/* Links */
+p a {
+  color: var(--text-color);
+}
+
+p a:hover {
+  color: var(--primary-color);
+}
+
+/* Table of Contents Styling */
+.toc a {
+  color: var(--text-color);
+}
+
+.toc a:hover {
+  color: var(--primary-color);
+}
+
+.toc a.active {
+  color: var(--primary-color);
+}
+
+/* Section Titles and Content */
+.section h2 {
+  color: var(--text-color);
+}
+
+.section p {
+  color: var(--text-color);
+}
+
+/* Scrollbar Styling */
+.content::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+}
+
+/* Social Icons */
+.social-icons a {
+  color: var(--text-color);
+}
+
+.social-icons a:hover {
+  color: var(--primary-color);
+}
+
+/* Logo */
+.logo h1 {
+  color: var(--text-color);
+}
+
+.logo:hover h1 {
+  text-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Footer */
+.footer {
+  color: var(--secondary-color);
+}

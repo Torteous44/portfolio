@@ -37,7 +37,7 @@
     font-family: "OBdot";
     src: url("./TTF/OffBitTrial-Dot.ttf") format("truetype");
     font-weight: normal;
-    font-style: dot;
+    font-style: swap;
   }
   
   @font-face {
@@ -47,4 +47,23 @@
     font-style: normal;
     font-display: swap;
   }
+
+  @font-face {
+    font-family: "HemVar";
+    src: url("./TTF/frag.otf") format("truetype");
+    font-weight: normal;
+
+    font-display: swap;
+  }
+  
+  
+
+  @font-face {
+    font-family: "HemVarli";
+    src: url("./TTF/fragReg.otf") format("truetype");
+    font-weight: normal;
+
+    font-display: swap;
+  }
+  
   

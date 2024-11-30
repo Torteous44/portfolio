@@ -1,8 +1,7 @@
-/* src/App.css */
 @import url('./assets/fonts/fonts.css');
 @import 'normalize.css';
 
-/* Define CSS Variables */
+/* CSS Variables for Dark Mode */
 :root {
   --background-color: #121212;
   --primary-color: #bb86fc;
@@ -16,6 +15,19 @@
   --transition-duration: 0.3s;
 }
 
+/* Light Mode Variables */
+body.light-mode {
+  --background-color: #ebebeb; /* Light Beige */
+  --primary-color: #0b0a0d;
+  --secondary-color: #666666;
+  --text-color: #5A5A5A; /* Dark Gray */
+  --border-color: #c3c3c3;
+  --font-family-main: "HemVar", monospace; /* Use the HemVar font */
+  --font-family-body: "HemVar", monospace;
+  --font-family-heading: "HemVar" , monospace;
+  --font-family-regular: "HemVar", monospace;
+}
+
 /* Reset default margins and paddings */
 * {
   margin: 0;
@@ -23,39 +35,36 @@
   box-sizing: border-box;
 }
 
-/* Set dark background and light text */
+/* General Body Styling */
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  font-family: var(--font-family-main); 
-  -webkit-font-smoothing: antialiased; /* For Safari and Chrome */
-  -moz-osx-font-smoothing: grayscale;  /* For Firefox */
+  font-family: var(--font-family-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-duration), color var(--transition-duration);
 }
 
-/* Split Layout */
+/* Layout Styling */
 .app-container {
   display: flex;
   height: 100vh;
 }
 
-/* Sidebar Styles */
 .sidebar {
   width: 250px;
   background-color: var(--background-color);
   padding: 20px;
-  align-self: stretch; /* Stretch to fill container height */
-
+  align-self: stretch;
   border-right: 1px solid var(--border-color);
 }
 
-/* Profile Text */
 .profile p {
   font-size: 20px;
   color: var(--secondary-color);
-  font-family: var(--font-family-regular); 
+  font-family: var(--font-family-regular);
 }
 
-/* Style links within paragraphs */
 p a {
   color: var(--text-color);
   transition: color var(--transition-duration);
@@ -63,10 +72,8 @@ p a {
 
 p a:hover {
   color: var(--primary-color);
-
 }
 
-/* Table of Contents */
 .toc {
   margin-top: 40px;
 }
@@ -83,27 +90,31 @@ p a:hover {
   text-decoration: none;
   color: var(--text-color);
   font-size: 18px;
-  font-family: var(--font-family-regular); 
-
-  transition: color var(--transition-duration);
+  font-family: var(--font-family-regular);
   font-weight: 200;
+  transition: color var(--transition-duration);
 }
 
 .toc a:hover {
   color: var(--primary-color);
-
 }
 
 .toc a.active {
   color: var(--primary-color);
   font-weight: bold;
-  font-family: var(--font-family-heading); /*links*/
-
+  font-family: var(--font-family-heading);
 }
 
 
+body.light-mode .toc a.active {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  border-radius: 4px; /* Optional rounded corners */
+  padding: 4px; /* Optional padding for spacing */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional light background */
+}
+
 .content {
-  flex-grow: 1; 
+  flex-grow: 1;
   padding: 40px;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -121,24 +132,35 @@ p a:hover {
 .section h2 {
   font-size: 33.5px;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: var(--text-color);
   font-family: var(--font-family-heading);
-  font-weight: 500; 
+  font-weight: 500;
   transition: color var(--transition-duration);
 }
 
+
+body.light-mode .section h2{
+  font-family: "HemVarli", serif;
+  font-weight: bold;
+}
 .section p {
   line-height: 1.8;
   margin-bottom: 7.5px;
   font-size: 19px;
   color: var(--text-color);
-  font-family: var(--font-family-body); 
-  font-weight: 700;
-  letter-spacing: 0.5px; 
-
+  font-family: var(--font-family-body);
+  font-weight: 700; /* Default weight */
+  letter-spacing: 0.5px;
 }
 
-/* Scrollbar Styles */
+/* Light mode specific styling */
+body.light-mode .section p {
+  font-family: "HemVarli", serif; 
+  font-weight: 800;/* Slightly less weight in light mode */
+}
+
+
+/* Scrollbar Styling */
 .content::-webkit-scrollbar {
   width: 8px;
 }
@@ -148,16 +170,7 @@ p a:hover {
   border-radius: 4px;
 }
 
-/* Hover Effects and Transitions */
-.toc a {
-  transition: color var(--transition-duration);
-}
-
-.section h2 {
-  transition: color var(--transition-duration);
-}
-
-/* Social Icons Styles */
+/* Social Icons */
 .social-icons {
   margin-top: 20px;
 }
@@ -174,11 +187,6 @@ p a:hover {
   transform: scale(1.1);
 }
 
-.social-icons a:last-child {
-  margin-right: 0;
-}
-
-/* Logo Styles */
 .logo {
   text-decoration: none;
   cursor: pointer;
@@ -187,11 +195,16 @@ p a:hover {
 .logo h1 {
   font-size: 50px;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: var(--text-color);
   font-family: var(--font-family-heading);
   font-weight: 425;
-  transition: transform var(--transition-duration), text-shadow var(--transition-duration);
+  transition: transform var(--transition-duration), text-shadow var(--transition-duration), font-size 0.1s ease;
 }
+
+body.light-mode .logo h1 {
+  font-size: 42px; /* Slightly smaller font size for light mode */
+}
+
 
 .logo:hover h1 {
   transform: scale(1.005);
@@ -213,7 +226,7 @@ p a:hover {
   }
 
   .profile {
-    display: none; /* Hide profile on small screens */
+    display: none;
   }
 
   .toc {
@@ -231,7 +244,7 @@ p a:hover {
   .content {
     margin-left: 0;
     margin-top: 0;
-    height: calc(100vh - 60px); /* Adjust based on header height */
+    height: calc(100vh - 60px);
   }
 }
 
@@ -243,9 +256,6 @@ p a:hover {
   }
 }
 
-
-
-/* Apply animation delays to sections */
 .section:nth-child(1) {
   --animation-delay: 0s;
 }
@@ -258,7 +268,8 @@ p a:hover {
   --animation-delay: 0.2s;
 }
 
-/* Blurry Shape Styles */
+
+/* Blurry Shape - Dark Mode */
 .blurry-shape {
   position: fixed;
   top: -100px;
@@ -267,44 +278,86 @@ p a:hover {
   height: 500px;
   background: radial-gradient(circle, rgba(187, 134, 252, 0.3) 0%, rgba(187, 134, 252, 0) 70%);
   pointer-events: none;
-  filter: blur(500px);
-  -webkit-filter: blur(50px); /* For Safari and older Chrome versions */
+  filter: blur(50px);
   z-index: 0;
-  transform: translate(900px, 900px);
-  opacity: 0.3; 
+  transform: translate(0, 0);
+  opacity: 0.5;
+}
 
+/* Blurry Shape - Light Mode */
+body.light-mode .blurry-shape {
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+  filter: blur(100px);
+  opacity: 0.25;
 }
 
 
-/* Ensure other elements are above the blurry shape */
 .sidebar,
 .content {
   position: relative;
   z-index: 1;
 }
 
-
-
-/* Hide the default cursor globally */
-body {
-  cursor: none;
-}
-
-button, a, input, h1 {
-  cursor: none; 
-}
+/* Footer */
 .footer {
   text-align: center;
   padding: 10px 0;
   font-size: 0.9rem;
-  color: #979696;
+  color: var(--secondary-color);
   position: relative;
-
-  margin-top: 20px; 
-
+  margin-top: 20px;
 }
 
 .footer a {
   text-decoration: none;
   margin-left: 5px;
+}
+
+.theme-toggle-wrapper {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  left: 20px; /* Distance from the left */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px; /* Space between text and circle */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: inherit; /* Inherits text color from theme */
+  background-color: rgba(0, 0, 0, 0.2); /* Optional background for better visibility */
+  padding: 8px 12px; /* Optional padding for a neat look */
+  border-radius: 12px; /* Rounded edges */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+  touch-action: manipulation; /* Ensure touch works properly */
+  z-index: 100000;
+}
+
+.theme-toggle-text {
+  font-weight: 500;
+}
+
+.theme-toggle-circle {
+  width: 14px; /* Size of the circle */
+  height: 16px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease; /* Smooth transition */
+  background-color: var(--text-color); /* Dynamic based on mode */
+}
+
+/* Ensure visibility for touch devices */
+body.light-mode .theme-toggle-circle {
+  background-color: black;
+}
+
+body.dark-mode .theme-toggle-circle {
+  background-color: white;
+}
+
+
+body.light-mode .footer{
+  font-family: 'HemVarLi', serif;
+}
+
+body.light-mode .footer a {
+  text-decoration: underline;
 }

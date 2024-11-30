@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
+
+
 import './assets/fonts/fonts.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import ProjectCard from './ProjectCard';
@@ -10,7 +12,30 @@ import ParticleCanvas from './components/ParticleCanvas';
 function App() {
   const [activeSection, setActiveSection] = useState('about');
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark'; // Default to dark mode
+  });
+  
+    // Dynamically load CSS for the selected theme
+    useEffect(() => {
+      console.log('Applying theme class:', theme); // Debug log
+      if (theme === 'light') {
+        document.body.classList.add('light-mode');
+        document.body.classList.remove('dark-mode');
+      } else {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+      }
+      localStorage.setItem('theme', theme);
+    }, [theme]);
+    
+    
 
+  // Toggle theme between dark and light modes
+  const toggleTheme = () => {
+    console.log('Toggle button clicked. Current theme:', theme);
+    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'));
+  };
   // References to each section
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -114,17 +139,17 @@ function App() {
       title: 'Expense Tracker Application',
       description:
         'A web-based full-stack expense management system allowing users to add, edit, and track expenses with analytics and profile management features.',
-      technologies: ['React', 'CSS', 'Node.js', 'MySql', 'Azure Functions'],
+      technologies: ['React', 'CSS', 'Python', 'MySql', 'Microsoft Azure'],
       image: require('./assets/images/expense-manager.png'),
-      githubLink: 'https://github.com/Torteous44/ExpenseTracker_group4',
-      liveDemoLink: 'https://torteous44.github.io/ExpenseTracker_group4/',
+      githubLink: 'https://github.com/Torteous44/ExpenseTracker',
+      liveDemoLink: 'https://torteous44.github.io/ExpenseTracker/',
     },
     {
       title: 'Shazam and SoundCloud DJ Setlist Generator',
       description:
         'A project that uses the Shazam and SoundCloud APIs to create a setlist of songs used in a DJ’s set.',
       image: require('./assets/images/dj-setlist.png'),
-      technologies: [ 'Node.js', 'Shazam API', 'SoundCloud API','Python',],
+      technologies: [  'Shazam API', 'SoundCloud API','Python',],
       githubLink: 'https://github.com/Torteous44/Soundcloud',
       liveDemoLink: null,
     },
@@ -150,7 +175,7 @@ function App() {
     <div className="app-container">
       <div className="blurry-shape" ref={blurryShapeRef}></div>
 
-      {!isTouchDevice && <ParticleCanvas />}
+      {!isTouchDevice && <ParticleCanvas theme={theme} />}
     
       {!isTouchDevice && <CustomCursor />}
 
@@ -159,7 +184,7 @@ function App() {
           <a href="#top" onClick={() => scrollToSection(aboutRef)} className="logo" >
             <h1>Matthew Porteous</h1>
           </a>
-          <p>CS and AI student <p></p> IE University</p>
+          <p>CS and AI Student <p></p> IE University</p>
         </div>
 
         {/* Navigation Links */}
@@ -195,6 +220,20 @@ function App() {
             </li>
           </ul>
         </nav>
+        <button className="theme-toggle-wrapper" onClick={toggleTheme}>
+  <span className="theme-toggle-text">
+    {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
+  </span>
+  <div
+    className="theme-toggle-circle"
+    style={{
+      backgroundColor: theme === 'dark' ? '#fff' : '#000',
+    }}
+  ></div>
+</button>
+
+
+
       </aside>
 
       {/* Right-side Scrollable Content */}

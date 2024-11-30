@@ -1,83 +1,137 @@
-/* src/ProjectCard.css */
-
 .project-card {
-    background-color: #1e1e1e;
-    border: 1px solid #2a2a2a;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    transition: transform 0.3s;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-3.7px);
-  }
-  
+  background-color: var(--card-bg-color, #1e1e1e); /* Default to dark mode */
+  border: 1px solid var(--card-border-color, #2a2a2a);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+}
 
-  .project-image img {
-    width: 100%;
-    height: 200px; 
-    object-fit: cover; 
-    object-position: center; 
-    display: block;
-  }
-  
-  .project-content {
-    padding: 20px;
-  }
-  
-  .project-content h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #ffffff;
-    font-family: "OB101", monospace;
-  }
-  
-  .project-content p {
-    font-size: 16px;
-    color: #e0e0e0;
-    margin-bottom: 15px;
-    font-family: "OB", monospace;
-  }
-  
-  .technologies {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-    padding: 0; /* Remove default padding */
-  }
-  
-  .technologies li {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    padding: 5px 10px;
-    border-radius: 4px;
-    margin: 5px 5px 0 0;
-    font-size: 14px;
-    font-family: "OBdotbold", monospace;
-  }
-  
-  .project-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .project-links a {
-    color: #e0e0e0;
-    font-size: 24px;
-    transition: color 0.3s;
-  }
-  
-  .project-links a:hover {
-    color: #bb86fc;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-  }
-  
+.project-card:hover {
+  transform: translateY(-3.7px);
+}
+
+.project-image img {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+  object-position: center; 
+  display: block;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--card-title-color, #ffffff);
+  font-family: "OB101", monospace;
+}
+
+.project-content p {
+  font-size: 16px;
+  color: var(--card-text-color, #e0e0e0);
+  margin-bottom: 15px;
+  font-family: "OB", monospace;
+}
+
+.technologies {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  padding: 0; /* Remove default padding */
+}
+
+.technologies li {
+  background-color: var(--tech-bg-color, #2a2a2a);
+  color: var(--tech-text-color, #e0e0e0);
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 5px 5px 0 0;
+  font-size: 14px;
+  font-family: "OBdotbold", monospace;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.project-links a {
+  color: var(--link-color, #e0e0e0);
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.project-links a:hover {
+  color: var(--link-hover-color, #bb86fc);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Light Mode Overrides */
+body.light-mode .project-card {
+  --card-bg-color: #ffffff; /* Light background */
+  --card-border-color: #dcdcdc; /* Light border */
+}
+
+body.light-mode .project-content h3 {
+  --card-title-color: #333333; /* Darker text */
+}
+
+body.light-mode .project-content p {
+  --card-text-color: #555555; /* Slightly darker text */
+}
+
+body.light-mode .technologies li {
+  --tech-bg-color: #f4f4f4; /* Light background for tech items */
+  --tech-text-color: #333333; /* Darker text for tech items */
+}
+
+body.light-mode .project-links a {
+  --link-color: #555555; /* Darker link */
+}
+
+body.light-mode .project-links a:hover {
+  --link-hover-color: #6200ea; /* Brighter hover color for links */
+}
+/* Light Mode Overrides */
+body.light-mode .project-card {
+  --card-bg-color: #ebebeb; /* Light background */
+  --card-border-color: #8c8a8a; /* Light border */
+}
+
+body.light-mode .project-content h3 {
+  --card-title-color: #333333; /* Darker text */
+  font-family: "HemVarli", sans-serif; /* Light mode font for titles */
+}
+
+body.light-mode .project-content p {
+  --card-text-color: #555555; /* Slightly darker text */
+  font-family: "HemVarli", sans-serif; /* Light mode font for paragraphs */
+}
+
+body.light-mode .technologies li {
+  --tech-bg-color: #f4f4f4; /* Light background for tech items */
+  --tech-text-color: #333333; /* Darker text for tech items */
+  font-family: "HemVarli", sans-serif; /* Light mode font for tech items */
+}
+
+body.light-mode .project-links a {
+  --link-color: #555555; /* Darker link */
+  font-family: "HemVarli", sans-serif; /* Light mode font for links */
+}
+
+body.light-mode .project-links a:hover {
+  --link-hover-color: #6200ea; /* Brighter hover color for links */
+}
