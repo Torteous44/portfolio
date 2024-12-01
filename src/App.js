@@ -13,7 +13,9 @@ function App() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'dark'; // Default to dark mode
   });
-    // ** Counter State ** 
+
+
+
     const [counter, setCounter] = useState(null);
     const [loading, setLoading] = useState(true);
 

@@ -9,7 +9,9 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    // Respect user's reduced motion preference
+
+
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return; // Do not render custom cursor
 

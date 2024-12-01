@@ -17,12 +17,12 @@
 
 /* Light Mode Variables */
 body.light-mode {
-  --background-color: #ebebeb; /* Light Beige */
+  --background-color: #ebebeb; 
   --primary-color: #0b0a0d;
   --secondary-color: #666666;
-  --text-color: #5A5A5A; /* Dark Gray */
+  --text-color: #5A5A5A; 
   --border-color: #c3c3c3;
-  --font-family-main: "HemVar", monospace; /* Use the HemVar font */
+  --font-family-main: "HemVar", monospace; 
   --font-family-body: "HemVar", monospace;
   --font-family-heading: "fragGlare" , monospace;
   --font-family-regular: "fragGlareli", monospace;
@@ -113,11 +113,11 @@ p a:hover {
 
 
 body.light-mode .toc a.active {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  border-radius: 4px; /* Optional rounded corners */
-  padding: 4px; /* Optional padding for spacing */
-  background-color: rgba(255, 255, 255, 0.8); /* Optional light background */
-  transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 4px; 
+  padding: 4px; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; 
 }
 
 .content {
@@ -156,14 +156,14 @@ body.light-mode .section h2{
   font-size: 19px;
   color: var(--text-color);
   font-family: var(--font-family-body);
-  font-weight: 700; /* Default weight */
+  font-weight: 700; 
   letter-spacing: 0.5px;
 }
 
 /* Light mode specific styling */
 body.light-mode .section p {
   font-family: "HemVarli", serif; 
-  font-weight: 350;/* Slightly less weight in light mode */
+  font-weight: 350; 
 }
 
 
@@ -210,7 +210,7 @@ body.light-mode .section p {
 
 body.light-mode .logo h1 {
   font-size: 42px;
-  transition: transform 0.3s ease, font-weight 0.1s ease, font-size 0.3s ease; /* Set smooth transitions */
+  transition: transform 0.3s ease, font-weight 0.1s ease, font-size 0.3s ease;
 }
 body.light-mode .logo:hover h1   {
   transform: scale(1.0075);
@@ -317,15 +317,38 @@ body.light-mode .blurry-shape {
   text-align: center;
   padding: 10px 0;
   font-size: 0.9rem;
-  color: var(--secondary-color);
+  color: var(--footer-text-color, var(--secondary-color));
   position: relative;
   margin-top: 20px;
-
+  font-family: var(--font-family-main);
+  transition: color 0.3s ease-in-out; 
 }
 
 .footer a {
   text-decoration: none;
   margin-left: 5px;
+  color: var(--footer-link-color, var(--primary-color)); 
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: var(--footer-link-hover-color, var(--text-color)); 
+}
+
+/* Light Mode Overrides */
+body.light-mode .footer {
+  --footer-text-color: #666;
+  --footer-link-color: #010547; 
+  --footer-link-hover-color: #000; 
+  font-weight:600;
+  font-family: var(--font-family-heading);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .footer {
+  --footer-text-color: #b0b0b0; 
+  --footer-link-color: #bb86fc; 
+  --footer-link-hover-color: #ffffff;
 }
 
 
@@ -339,83 +362,83 @@ body.light-mode .blurry-shape {
   cursor: pointer;
   gap: 8px;
   font-family: var(--font-family-body, sans-serif);
-  font-size: 11px; /* Default text size */
-  color: var(--text-color); /* Matches the website's text color */
-  background-color: var(--background-color); /* Matches the website's background */
+  font-size: 11px; 
+  color: var(--text-color);
+  background-color: var(--background-color); 
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid var(--border-color); /* Matches the border color in current theme */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  transition: all 0.3s ease-in-out; /* Smooth transitions */
+  border: 1px solid var(--border-color);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out; 
   z-index: 100000;
 }
 
 .theme-toggle-wrapper:hover {
-  background-color: var(--primary-color); /* Matches primary color on hover */
-  color: var(--background-color); /* Contrast text on hover */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  background-color: var(--primary-color); 
+  color: var(--background-color); 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   transform: translateY(-1px); /* Lift effect */
 }
 
 .theme-toggle-text {
   font-weight: 600;
-  font-family: var(--font-family-heading, sans-serif); /* Matches heading font */
+  font-family: var(--font-family-heading, sans-serif); 
   letter-spacing: 0.5px;
-  transition: font-size 0.3s ease, padding 0.3s ease; /* Smooth transition for font size and alignment */
+  transition: font-size 0.3s ease, padding 0.3s ease;
 }
 
 /* Circle Styling */
 .theme-toggle-circle {
-  width: 14px; /* Slightly larger for better visibility */
+  width: 14px; 
   height: 14px;
   border-radius: 50%;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  border: 2px solid var(--border-color); /* Matches the border color */
+  border: 2px solid var(--border-color);
 }
 
 /* Circle Styling for Light and Dark Modes */
 body.light-mode .theme-toggle-circle {
-  background-color: #ffffff; /* White circle in light mode */
+  background-color: #ffffff; 
 }
 
 body.dark-mode .theme-toggle-circle {
-  background-color: #000000; /* Black circle in dark mode */
+  background-color: #000000; 
 }
 
 .theme-toggle-wrapper:hover .theme-toggle-circle {
-  transform: scale(1.2); /* Scale up on hover */
+  transform: scale(1.2); 
 }
 
 /* Light Mode Specific Styling */
 body.light-mode .theme-toggle-wrapper {
-  background-color: rgba(0, 0, 0, 0.05); /* Subtle light background for contrast */
+  background-color: rgba(0, 0, 0, 0.05);
   color: var(--text-color);
 }
 
 body.light-mode .theme-toggle-text {
-  font-size: 11px; /* Default size in light mode */
-  color: var(--text-color); /* Matches text color */
+  font-size: 11px; 
+  color: var(--text-color); 
 }
 
 /* Dark Mode Specific Styling */
 body.dark-mode .theme-toggle-wrapper {
-  background-color: rgba(255, 255, 255, 0.1); /* Subtle dark background for contrast */
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-color);
 }
 
 body.dark-mode .theme-toggle-text {
-  font-size: 13px; /* Slightly larger text size in dark mode */
-  padding-top: 2px; /* Adjust text position down by 2px */
-  color: var(--text-color); /* Matches text color */
+  font-size: 13px; 
+  padding-top: 2px; 
+  color: var(--text-color); 
 }
 
 
 @media (max-width: 768px) {
   .theme-toggle-wrapper {
-    top: 15px; /* Distance from the top */
-    right: -7px; /* Distance from the left */
-    bottom: auto; /* Reset bottom position */
-    left: auto; /* Reset right position */
+    top: 15px; 
+    right: -7px;
+    bottom: auto; 
+    left: auto; 
     transform: scale(0.7);
     border-width: 0cap;
     font-family: 'HemVar', sans-serif;
@@ -423,9 +446,9 @@ body.dark-mode .theme-toggle-text {
   }
 }/* Counter Tooltip Styles */
 #counter-tooltip {
-  position: absolute; /* Positioned within the sidebar */
-  bottom: 20px; /* Just above the theme toggle button */
-  left: 72%; /* Dynamically center horizontally */
+  position: absolute;
+  bottom: 20px; 
+  left: 72%; 
   cursor: pointer;
   height: 20px;
   border-radius: 6px;
@@ -433,38 +456,38 @@ body.dark-mode .theme-toggle-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 8px; /* Dynamic horizontal padding for resizing */
+  padding: 0 8px; 
   transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-  background-color: var(--tooltip-container-bg); /* Dynamically set background color */
-  color: var(--tooltip-text-color); /* Dynamically set text color */
-  min-width: 20px; /* Ensures a minimum size */
-  z-index: 2147483647; /* Highest possible z-index */
+  background-color: var(--tooltip-container-bg);
+  color: var(--tooltip-text-color);
+  min-width: 20px;
+  z-index: 2147483647; 
   font-family: var(--font-family-regular);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
 
 }
 
 #counter-tooltip:hover {
-  transform: scale(1.1); /* Slight scale effect on hover */
+  transform: scale(1.1); 
 }
 
 #counter-tooltip .tooltip {
-  position: absolute; /* Positioned relative to the tooltip container */
-  top: -190px; /* Adjusted dynamically based on the button's size */
-  left: 50%; /* Center the tooltip relative to the button */
-  transform: translateX(-50%); /* Adjust horizontally for centering */
+  position: absolute; 
+  top: -190px; 
+  left: 50%;
+  transform: translateX(-50%); 
   opacity: 0;
 
   pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-  background-color: var(--tooltip-bg); /* Dynamically set tooltip background */
-  color: var(--tooltip-text-color); /* Dynamically set tooltip text color */
+  background-color: var(--tooltip-bg); 
+  color: var(--tooltip-text-color);
   border-radius: 4px;
   padding: 18px 20px;
   font-size: 15px;
   text-align: center;
-  width: auto; /* Allow tooltip to resize dynamically */
-  z-index: 2147483647; /* Highest z-index to ensure it renders on top */
+  width: auto;
+  z-index: 2147483647; 
   font-family: var(--font-family-regular);
   font-weight: bold;
 }
@@ -474,10 +497,10 @@ body.dark-mode .theme-toggle-text {
   content: "";
   height: 0.6em;
   width: 0.6em;
-  bottom: -0.3em; /* Position the arrow below the tooltip */
+  bottom: -0.3em; 
   left: 50%;
-  transform: translateX(-50%) rotate(45deg); /* Center and rotate to form an arrow */
-  background-color: var(--tooltip-bg); /* Match tooltip background */
+  transform: translateX(-50%) rotate(45deg); 
+  background-color: var(--tooltip-bg); 
   z-index: 2147483647;
 }
 
@@ -488,34 +511,34 @@ body.dark-mode .theme-toggle-text {
 
 /* Light Mode Overrides */
 body.light-mode #counter-tooltip {
-  background-color: rgba(0, 0, 0, 0.05); /* White background for container in light mode */
-  color: #000000; /* Black text */
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000000; 
 }
 
 body.light-mode #counter-tooltip .tooltip {
-  background-color: #5a5a5a; /* Black background for tooltip in light mode */
-  color: #ffffff; /* White text */
+  background-color: #5a5a5a; 
+  color: #ffffff;
   font-weight: 500;
 }
 
 body.light-mode #counter-tooltip .tooltip::before {
-  background-color: #5a5a5a; /* Match tooltip background */
+  background-color: #5a5a5a;
 }
 
 /* Dark Mode Overrides */
 body.dark-mode #counter-tooltip {
-  background-color: rgba(255, 255, 255, 0.1);/* Black background for container in dark mode */
-  color: #ffffff; /* White text */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff; 
   padding-top: 3px;
 }
 
 body.dark-mode #counter-tooltip .tooltip {
-  background-color: var(--text-color); /* White background for tooltip in dark mode */
-  color: #000000; /* Black text */
+  background-color: var(--text-color); 
+  color: #000000; 
 }
 
 body.dark-mode #counter-tooltip .tooltip::before {
-  background-color: #ece9e9; /* Match tooltip background */
+  background-color: #ece9e9;
 }
 
 /* Hide Counter Tooltip on Mobile */
@@ -528,8 +551,8 @@ body.dark-mode #counter-tooltip .tooltip::before {
 .spinner {
   width: 16px;
   height: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.3); /* Outer border */
-  border-top-color: #fff; /* Top border color */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff; 
   border-radius: 50%;
   animation: spin 0.6s linear infinite;
 }
