@@ -347,15 +347,66 @@ function App() {
               <FaGithub />
             </a>
           </div>
+
+
         </section>
 
 
 
+
+
         <footer className="footer">
+  {theme === 'light' && (
+
+  <div className="ascii-art-container">
+  <div className="ascii-art-lizard">
+      <pre>
+        
+        {`                  
+                         )/_
+               _.--..---"-,--c_
+          \\L..'           ._O__)_
+  ,-.     _.+  _  \\..--( /          
+    \\.-''__.-' \\ (       \\_      
+      '''       '\\__     /\\
+                  ')          
+        `}
+        </pre>
+      </div>
+        <div className="ascii-art-tree">
+          <pre> 
+          {`
+           \\/ |    |/
+           \\/ / \\||/  /_/___/_
+            \\/   |/ \\/
+       _\\__\\_\\   |  /_____/_
+              \\  | /          /
+     __ _-----  |{,-----------~
+               \\ }{
+                }{{
+                }}{
+                {{}
+          , -=-~{ .-^- _
+                  }
+                 {
+          `}
+        </pre>
+      </div>
+
+    </div>
+
+
+
+    
+
+  )}
+
+          
         <p>
           Built with <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a> |
           <a href="https://github.com/Torteous44/portfolio" target="_blank" rel="noopener noreferrer"> View on GitHub</a>
         </p>
+      
       </footer>
       </main>
     </div>
