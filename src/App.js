@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import ProjectCard from './components/ProjectCard';
 import CustomCursor from './components/CustomCursor'; 
 import ParticleCanvas from './components/ParticleCanvas';
+import AsciiLizard from './components/lizard.js'; 
 
 
 function App() {
@@ -179,7 +180,7 @@ function App() {
     },
     {
       title: 'Restaurant Menu Management System',
-      description: 'A ai-powered system for managing restaurant menus, allowing users to create, view, and update menu items, sections, and dietary restrictions.',
+      description: 'An AI-powered system for managing restaurant menus, allowing users to create, view, and update menu items, sections, and dietary restrictions.',
       image: require('./assets/images/restaurantmenu.png'),
       technologies: ['Python', 'Django', 'React', 'JavaScript', 'MySQL'],
       githubLink: 'https://github.com/Torteous44/Restaurant_Menu_DB',
@@ -351,18 +352,7 @@ function App() {
 
   <div className="ascii-art-container">
   <div className="ascii-art-lizard">
-      <pre>
-        
-        {`                  
-                         )/_
-               _.--..---"-,--c_
-          \\L..'           ._O__)_
-  ,-.     _.+  _  \\..--( /          
-    \\.-''__.-' \\ (       \\_      
-      '''       '\\__     /\\
-                  ')          
-        `}
-        </pre>
+  <AsciiLizard /> 
       </div>
         <div className="ascii-art-tree">
           <pre> 

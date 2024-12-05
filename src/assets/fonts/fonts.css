@@ -91,3 +91,10 @@
 
     font-display: swap;
   }
+  @font-face {
+    font-family: "larkenlight";
+    src: url("./TTF/LarkenDEMO-Light.otf") format("truetype");
+    font-weight: normal;
+
+    font-display: swap;
+  }
