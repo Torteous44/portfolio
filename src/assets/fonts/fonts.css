@@ -83,3 +83,11 @@
 
     font-display: swap;
   }
+
+  @font-face {
+    font-family: "larken";
+    src: url("./TTF/LarkenDEMO-Regular.otf") format("truetype");
+    font-weight: normal;
+
+    font-display: swap;
+  }

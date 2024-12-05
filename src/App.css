@@ -141,7 +141,7 @@ body.light-mode .toc a.active {
   margin-bottom: 20px;
   color: var(--text-color);
   font-family: var(--font-family-heading);
-  font-weight: 500;
+  font-weight: 550;
   transition: color var(--transition-duration);
 }
 
@@ -151,7 +151,7 @@ body.light-mode .toc a.active {
 
 body.light-mode .section h2{
   font-family: "fragGlare", serif;
-  font-weight: 200;
+  font-weight: 500;
 }
 .section p {
   line-height: 1.8;
@@ -165,8 +165,8 @@ body.light-mode .section h2{
 
 /* Light mode specific styling */
 body.light-mode .section p {
-  font-family: "HemVarli", serif; 
-  font-weight: 350; 
+  font-family: "larken", serif; 
+  font-weight: 150; 
 }
 
 
@@ -586,8 +586,8 @@ body.dark-mode #counter-tooltip .tooltip::before {
 .ascii-art-lizard {
   text-align: left;
   position: fixed;
-  bottom: -90px;
-  left: -160px;
+  bottom: -100px;
+  left: -180px;
   font-size: 6.5px; 
   white-space: pre; 
   position: relative; 
@@ -600,7 +600,7 @@ body.dark-mode #counter-tooltip .tooltip::before {
   position: fixed;
   padding-right: 0px;
   left: 140px;
-  bottom: -47.5px;
+  bottom: -45px;
   font-size: 6.5px; 
   white-space: pre; 
   position: relative; 
@@ -637,3 +637,4 @@ body.light-mode .footer{
   margin-top: 0px;
   margin-bottom: 0px;
 }
+

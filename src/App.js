@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import './assets/fonts/fonts.css';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import ProjectCard from './ProjectCard';
+import ProjectCard from './components/ProjectCard';
 import CustomCursor from './components/CustomCursor'; 
 import ParticleCanvas from './components/ParticleCanvas';
 
@@ -171,29 +171,20 @@ function App() {
     {
       title: 'Expense Tracker Application',
       description:
-        'A web-based full-stack expense management system allowing users to add, edit, and track expenses with analytics and profile management features.',
+        'A web-based full-stack expense management application allowing users to add, edit, and track expenses with analytics and profile management features.',
       technologies: ['React', 'CSS', 'Python', 'MySql', 'Microsoft Azure'],
       image: require('./assets/images/expense-manager.png'),
       githubLink: 'https://github.com/Torteous44/ExpenseTracker',
       liveDemoLink: 'https://torteous44.github.io/ExpenseTracker/',
     },
-    // {
-    //   title: 'Shazam and SoundCloud DJ Setlist Generator',
-    //   description:
-    //     'A project that uses the Shazam and SoundCloud APIs to create a setlist of songs used in a DJ’s set.',
-    //   image: require('./assets/images/dj-setlist.png'),
-    //   technologies: [  'Shazam API', 'SoundCloud API','Python',],
-    //   githubLink: 'https://github.com/Torteous44/Soundcloud',
-    //   liveDemoLink: null,
-    // },
     {
-      title: 'Command Line Password Manager Written in C',
-      description: 'Allows users to securely store and manage their passwords for various websites or services. The passwords are encrypted using a master password and an encryption key, providing an additional layer of security.',
-      image: require('./assets/images/passwordmanager.png'),
-      technologies: ['C'],
-      githubLink: 'https://github.com/Torteous44/PasswordManager',
-
+      title: 'Restaurant Menu Management System',
+      description: 'A ai-powered system for managing restaurant menus, allowing users to create, view, and update menu items, sections, and dietary restrictions.',
+      image: require('./assets/images/restaurantmenu.png'),
+      technologies: ['Python', 'Django', 'React', 'JavaScript', 'MySQL'],
+      githubLink: 'https://github.com/Torteous44/Restaurant_Menu_DB',
     },
+    
     {
       title: 'Terminal-Based Chat Application in C',
       description: 'A real-time multi-client chat application built using C with support for public and private chat rooms, direct messaging, and user management. The application uses socket programming and multithreading for seamless communication between the server and multiple clients.',
@@ -266,9 +257,9 @@ function App() {
     <div>
       <div id="counter-tooltip" onClick={incrementCounter}>
         {loading ? (
-          <div className="spinner"></div> // Render spinner while loading
+          <div className="spinner"></div> 
         ) : (
-          <span>{counter}</span> // Display counter after loading
+          <span>{counter}</span> 
         )}
         <div className="tooltip">
           This button has been clicked {counter} times globally.
@@ -376,19 +367,20 @@ function App() {
         <div className="ascii-art-tree">
           <pre> 
           {`
-           \\/ |    |/
-           \\/ / \\||/  /_/___/_
-            \\/   |/ \\/
-       _\\__\\_\\   |  /_____/_
-              \\  | /          /
-     __ _-----  |{,-----------~
-               \\ }{
-                }{{
-                }}{
-                {{}
-          , -=-~{ .-^- _
-                  }
-                 {
+              _    _
+             | |  | |
+            -| |  | |-
+        _    | |- | |
+      -| |   | |  | |-
+       |.|  -| ||/  |
+       | |-  |  ___/
+      -|.|   | | |
+       |  \\_|| |
+        \\____  |
+         |   | |-
+             | |
+            -| | 
+             |_| 
           `}
         </pre>
       </div>

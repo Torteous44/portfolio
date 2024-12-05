@@ -120,7 +120,7 @@ body.light-mode .project-content h3 {
 
 body.light-mode .project-content p {
   --card-text-color: #555555; /* Slightly darker text */
-  font-family: "fragGlare", sans-serif; /* Light mode font for paragraphs */
+  font-family: "larken", sans-serif; /* Light mode font for paragraphs */
 }
 
 body.light-mode .technologies li {
