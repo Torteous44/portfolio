@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.fb846059.css",
+    "main.css": "/static/css/main.09e4dc73.css",
     "main.js": "/static/js/main.fa8bf224.js",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
@@ -18,11 +18,11 @@
     "static/media/LarkenDEMO-Regular.otf": "/static/media/LarkenDEMO-Regular.eb993a16e5e5423b14a1.otf",
     "static/media/LarkenDEMO-Light.otf": "/static/media/LarkenDEMO-Light.1d3bfb1ba794972fdfc5.otf",
     "index.html": "/index.html",
-    "main.fb846059.css.map": "/static/css/main.fb846059.css.map",
+    "main.09e4dc73.css.map": "/static/css/main.09e4dc73.css.map",
     "main.fa8bf224.js.map": "/static/js/main.fa8bf224.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb846059.css",
+    "static/css/main.09e4dc73.css",
     "static/js/main.fa8bf224.js"
   ]
 }
