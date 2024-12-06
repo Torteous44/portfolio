@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c48e9052.css",
-    "main.js": "/static/js/main.45442dc4.js",
+    "main.css": "/static/css/main.77899c77.css",
+    "main.js": "/static/js/main.f573dcb8.js",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
     "static/media/restaurantmenu.png": "/static/media/restaurantmenu.6b56da9ef2f684a76a6c.png",
@@ -18,11 +18,11 @@
     "static/media/LarkenDEMO-Regular.otf": "/static/media/LarkenDEMO-Regular.eb993a16e5e5423b14a1.otf",
     "static/media/LarkenDEMO-Light.otf": "/static/media/LarkenDEMO-Light.1d3bfb1ba794972fdfc5.otf",
     "index.html": "/index.html",
-    "main.c48e9052.css.map": "/static/css/main.c48e9052.css.map",
-    "main.45442dc4.js.map": "/static/js/main.45442dc4.js.map"
+    "main.77899c77.css.map": "/static/css/main.77899c77.css.map",
+    "main.f573dcb8.js.map": "/static/js/main.f573dcb8.js.map"
   },
   "entrypoints": [
-    "static/css/main.c48e9052.css",
-    "static/js/main.45442dc4.js"
+    "static/css/main.77899c77.css",
+    "static/js/main.f573dcb8.js"
   ]
 }
