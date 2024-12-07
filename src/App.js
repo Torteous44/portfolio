@@ -13,6 +13,10 @@ import RedMusic from './music/Red.mp3';
 import DreamDeath from './music/dreamdeath.mp3'
 import OutCasts from './music/Outcasts.mp3'
 import MusicVisualizer from './components/MusicVisualizer';
+import Grandma from './music/grandma.mp3';
+import Forget from './music/forget.mp3';
+import SendMe from './music/sendme.mp3';
+
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -22,13 +26,13 @@ function App() {
   });
   const [musicPlaying, setMusicPlaying] = useState(false);
 
-  const playlist = [RedMusic, DreamDeath, OutCasts]; // Your playlist
+  const playlist = [RedMusic, DreamDeath, OutCasts, Grandma, Forget, SendMe];
 
   const [easterEggActive, setEasterEggActive] = useState(false);
   const [fadeOpacity, setFadeOpacity] = useState(1); // Controls the fade effect
-  const audioRef = useRef(new Audio(RedMusic)); // Initialize the first song in the playlist
+  const audioRef = useRef(new Audio(RedMusic)); 
 
-  // Handle Easter egg activation from AsciiCactus
+
   const handleEasterEggActivation = () => {
     setEasterEggActive(true);
   };
@@ -58,6 +62,19 @@ function App() {
     // Play music when halfway point is reached
     if (scrollTop >= halfwayPoint && !musicPlaying) {
       playMusic();
+
+      
+    }
+
+    if (scrollTop === 0 && easterEggActive) {
+      setEasterEggActive(false);
+
+          // Stop the music
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0; // Reset the music
+    }
+    setMusicPlaying(false); // Reset the ability to play music
     }
   };
   
@@ -278,7 +295,7 @@ function App() {
     backgroundColor: `rgba(255, 255, 255, ${1 - fadeOpacity})`, // Fade background dynamically
     transition: 'background-color 0.3s ease',
     borderWidth: `${fadeOpacity * 1}px`, // Dynamically adjust border width
-
+    display: fadeOpacity === 0 ? 'none' : 'block', // Hide the sidebar when it's fully faded
   }}
 >
   <div
@@ -600,30 +617,30 @@ function App() {
         <pre>{`
         
 
-                            .-""""-.
-                           F       'Y
-                          F          Y
-                         I            I
-                          L          J          ##
-                           L        J          ###
-                       #    '-.__.-'          ####
-              _____   ##                 .---#####-...__
-          .--'     '-###          .--..-'    ######     ""'---....
- _____.----.        ###''.._____ .'          #######
-                    ###       /       -.    ####### _.---
-                    ###     .(              #######
-                     #      : '--...        ######
-                     #       '.     ''.     ######
-                           _   :       :.    #####
-                          ( )            )    ###
-                         ,- -.           /    ##
-                        |,   .|          |   .##
-                        || ' |;         |     '
-                     .  ((_, J         <
-                   .'    | | |         |
-                  /      | ; )         |
-                 '       |_ -          .
-                                        
+                                .-""""-.
+                              F       'Y
+                              F          Y
+                            I            I
+                              L          J          ##
+                              L        J          ###
+                          #    '-.__.-'          ####
+                  _____   ##                 .---#####-...__
+              .--'     '-###          .--..-'    ######     ""'---....
+    _____.----.        ###''.._____ .'          #######
+                        ###       /       -.    ####### _.---
+                        ###     .(              #######
+                        #      : '--...        ######
+                        #       '.     ''.     ######
+                              _   :       :.    #####
+                              ( )            )    ###
+                            ,- -.           /    ##
+                            |,   .|          |   .##
+                            || ' |;         |     '
+                        .  ((_, J         <
+                      .'    | | |         |
+                      /      | ; )         |
+                    '       |_ -          .
+                                            
         
         `}</pre>
       </div>
@@ -886,7 +903,30 @@ __..--""      | |                          |
 `}</pre>
       </div>
 
+      <div className="ascii-art-item" id="ascii-art-14">
+        <pre>
+{`
+                        .   *        .       .
+                        *      -0-
+                           .                .  *       - )-
+                        .      *       o       .       *
+                  o                |
+                            .     -O-
+                 .                 |        *      .     -0-
+                        *  o     .    '       *      .        o
+                               .         .        |      *
+                    *             *              -O-          .
+                          .             *         |     ,
+                                 .           o
+                         .---.
+                   =   _/__~0_\\_     .  *            o       '
+                  = = (_________)             .
+                                  .                        *
+                        *               - ) -       *
+                               .               .
 
+`}</pre>
+      </div>
     </div>
 
     {/* Music Visualizer */}
@@ -894,7 +934,7 @@ __..--""      | |                          |
       style={{
         position: 'absolute', // Positioned at the bottom of the scrollable content
         bottom: '-100px',
-        left: '0px',
+        left: '250px',
         width: '1000px',
         height: '150px', // Adjust height as needed
         backgroundColor: '#000',

@@ -120,26 +120,38 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
           onClick={togglePlayPause}
           style={{
             fontFamily: 'monospace',
-            fontSize: '16px',
-            marginBottom: '10px',
+            fontWeight: '800',
+            fontSize: '25px',
+            marginBottom: '4px',
             border: 'none',
             background: 'none',
             cursor: 'pointer',
           }}
         >
-          {isPlaying ? `(❚❚) Pause` : `(►) Play`}
+          {isPlaying ? `|| ` : `►`}
         </button>
         <button
           onClick={playNextTrack}
           style={{
             fontFamily: 'monospace',
-            fontSize: '16px',
+            fontWeight: '800',
+            fontSize: '11px',
             border: 'none',
             background: 'none',
             cursor: 'pointer',
           }}
         >
-         {` (>>|) Next`}
+          <pre>
+         {` 
+         
+               .
+  .. ............;;.
+    ..::::::::::::;;;;.
+. . ::::::::::::;;:'
+                :'
+
+         `}
+         </pre>
         </button>
       </div>
     </div>

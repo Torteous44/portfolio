@@ -59,6 +59,7 @@ body {
   padding: 20px;
   align-self: stretch;
   border-right: 1px solid var(--border-color);
+  height: 100vh;
 }
 
 .profile p {
@@ -624,14 +625,15 @@ body.dark-mode #counter-tooltip .tooltip::before {
 }
 .lizard-tongue {
   position: relative;
-  bottom: -61px;
-  left: -110px;
+  bottom: -110px;
+  left: -155px;
   font-size: 6.2px; 
   font-family: 'Courier New', Courier, monospace;
   white-space: pre;
   opacity: 0;
   pointer-events: none;
   user-select: none;
+  padding-top: 0;
 }
 
 .lizard-tongue.show {
@@ -641,7 +643,7 @@ body.dark-mode #counter-tooltip .tooltip::before {
 .ascii-cactus {
   text-align: left;
   position: fixed;
-  padding-right: 0px;
+
   left: 250px;
   bottom: -40px;
   font-size: 6.5px; 
@@ -649,22 +651,21 @@ body.dark-mode #counter-tooltip .tooltip::before {
   position: relative; 
   opacity: 100%; 
   pointer-events: auto; 
-
   user-select: none;
   transition: transform 0.2s ease;
   cursor: pointer;
 
-
+  padding-top: 0;
 }
 .ascii-cactus:active {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 .ascii-cactus pre {
   font-family: 'Courier New', Courier, monospace;
   white-space: pre;
   color: inherit; 
-  margin: 0; 
+  padding-top: 0
 }
 .ascii-cactus div {
   transition: all 0.3s ease;
@@ -721,7 +722,7 @@ body.white-background {
 
 body.light-mode #contact {
   padding-bottom: 0px;
-  padding-top: 20px; 
+  padding-top: 0px; 
 }
 
 
@@ -729,5 +730,8 @@ body.light-mode .footer{
   padding: 0;
   margin-top: 0px;
   margin-bottom: 0px;
+  transform: translateY(-10px);
 }
+
+
 
