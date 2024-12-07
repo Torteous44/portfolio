@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 const MusicVisualizer = ({ audioElement, playlist }) => {
   const canvasRef = useRef(null);
@@ -9,7 +9,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     if (!audioElement) return;
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
     const analyser = audioContext.createAnalyser();
     analyser.fftSize = 256;
@@ -27,14 +27,14 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     const draw = () => {
       requestAnimationFrame(draw);
 
       analyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = '#FFFFFF';
+      ctx.fillStyle = "#FFFFFF";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       const centerX = canvas.width / 2;
@@ -53,7 +53,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
         const x2 = centerX + Math.cos(angle) * (radius + barHeight);
         const y2 = centerY + Math.sin(angle) * (radius + barHeight);
 
-        ctx.strokeStyle = '#000000';
+        ctx.strokeStyle = "#000000";
         ctx.lineWidth = barWidth;
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -65,7 +65,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     draw();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
       audioContext.close();
     };
   }, [audioElement]);
@@ -90,57 +90,64 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
   return (
     <div
       style={{
-        position: 'relative',
-        width: '1000px',
-        height: '100vh',
-        backgroundColor: '#FFFFFF',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        display: "flex",
+        width: "100%",
+        height: "100vh",
+        backgroundColor: "#FFFFFF",
       }}
     >
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-        }}
-      />
+      {/* Visualizer Section */}
       <div
         style={{
-          position: 'absolute',
-          zIndex: 10,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+          flex: 1,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
         }}
       >
-        <button
-          onClick={togglePlayPause}
+        <canvas
+          ref={canvasRef}
           style={{
-            fontFamily: 'monospace',
-            fontWeight: '800',
-            fontSize: '25px',
-            marginBottom: '4px',
-            border: 'none',
-            background: 'none',
-            cursor: 'pointer',
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            zIndex: 10,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          {isPlaying ? `|| ` : `►`}
-        </button>
-        <button
-          onClick={playNextTrack}
-          style={{
-            fontFamily: 'monospace',
-            fontWeight: '800',
-            fontSize: '11px',
-            border: 'none',
-            background: 'none',
-            cursor: 'pointer',
-          }}
-        >
+          <button
+            onClick={togglePlayPause}
+            style={{
+              fontFamily: "monospace",
+              fontWeight: "800",
+              fontSize: "25px",
+              marginBottom: "4px",
+              border: "none",
+              background: "none",
+              cursor: "pointer",
+            }}
+          >
+            {isPlaying ? `|| ` : `►`}
+          </button>
+          <button
+            onClick={playNextTrack}
+            style={{
+              fontFamily: "monospace",
+              fontWeight: "800",
+              fontSize: "11px",
+              border: "none",
+              background: "none",
+              cursor: "pointer",
+            }}
+          >
           <pre>
          {` 
          
@@ -152,10 +159,77 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
 
          `}
          </pre>
-        </button>
+          </button>
+        </div>
       </div>
+
+      {/* Setlist Section */}
+      {/* Setlist Section */}
+<div
+  style={{
+    width: "300px", // Smaller width
+    backgroundColor: "#fff",
+    padding: "10px",
+
+    borderRadius: "8px", // Rounded corners for a card effect
+    fontFamily: "monospace",
+    fontSize: "12px", // Smaller text size
+    margin: "10px", 
+    marginBottom: '0px',
+    height: "fit-content", // Ensure the height adjusts to content
+    transform: 'translateY(130px)',
+    cursor: 'none' ,
+
+  }}
+>
+  <h3
+    style={{
+      fontSize: "14px",
+      marginBottom: "10px",
+      color: "#333",
+      textAlign: "center", // Center align the title
+      cursor: 'none' ,
+    }}
+  >
+
+  </h3>
+  <ul
+    style={{
+      listStyle: "none",
+      padding: 0,
+      margin: 0,
+      cursor: 'none',
+    }}
+  >
+    {playlist.map((track, index) => (
+      <li
+        key={index}
+        style={{
+          padding: "6px 8px", // Smaller padding for items
+          margin: "4px 0", // Reduced spacing between items
+          backgroundColor: currentTrackIndex === index ? "#f0f0f0" : "#fff",
+          border: "1px solid #ddd", // Add a border for each item
+          borderRadius: "5px",
+
+          fontSize: "12px", // Smaller font for compact design
+          cursor: 'none' ,
+        }}
+        onClick={() => {
+          setCurrentTrackIndex(index);
+          audioElement.src = playlist[index];
+          audioElement.play();
+          setIsPlaying(true);
+        }}
+      >
+        {index + 1}. {track}
+      </li>
+    ))}
+  </ul>
+</div>
+
     </div>
   );
 };
 
 export default MusicVisualizer;
+

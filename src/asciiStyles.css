@@ -8,93 +8,170 @@
     font-family: monospace; /* Ensures ASCII art renders correctly */
     font-size: 14px; /* Adjust as needed */
     color: #000; /* Black text to stand out on the background */
+    user-select: none;
   }
   
   /* Example placements */
   #ascii-art-1 {
-    top: 58%;
+    top: 64%;
     left: 0%;
     font-size: 8px;
   }
-  
+  /* cupid */
   #ascii-art-2 {
-    top: 98%;
-    right: 15%;
-    font-size:7px;
+    top: 66.4%;
+    right: 20%;
+    font-size:12px;
 
   }
-  
+  /*big bath painting */
   #ascii-art-3 {
-    top: 70%;
-    left: 10%;
-    font-size: 10px;
+    top: 68%;
+    left: 58%;
+    font-size: 7px;
   }
   
   #ascii-art-4 {
-    top: 90%;
-    right: 10%;
-    font-size: 15px;
+    top: 64.5%;
+    right: 70%;
+    font-size: 12px;
 
   }
   
   #ascii-art-5 {
-    top: 82%;
-    left: 15%;
+    top: 63.3%;
+    left: 20%;
     font-size: 8px;
   }
   
   #ascii-art-6 {
-    top: 60%;
-    right: 15%;
-    font-size: 10px;
-  }
-  
-  #ascii-art-7 {
-    top: 88%;
-    left: 0%;
+    top: 65.3%;
+    left: 65%;
     font-size: 8px;
   }
   
+  #ascii-art-7 {
+    top: 68.2%;
+    left: 0%;
+    font-size: 8px;
+  }
+  /* bike */
   #ascii-art-8 {
-    top: 80%;
-    right: 20%;
-    font-size: small;
+    top: 62.4%;
+    left: 60%;
+    font-size: 10px
   }
   #ascii-art-9 {
-    top: 75%;
+    top: 63.4%;
     right: 40%;
     font-size: 6px;
   }
 
   #ascii-art-10 {
-    top: 68%;
+    top: 67.5%;
     right: 55%;
     font-size: 6px;
   }
   
   #ascii-art-11 {
     top: 62%;
-    right: 55%;
+    right: 65%;
     font-size: 7px;
   }
     
   #ascii-art-12 {
     top: 64%;
-    right: 40%;
+    right: 20%;
     font-size: 7px;
   }
   
-    
+    /* robot */
   #ascii-art-13 {
-    top: 66%;
-    right: 20%;
+    top: 65%;
+    left: 45%;
     font-size: 7px;
   }
 
   #ascii-art-14 {
-    top: 95%;
+    top: 66%;
     right: 60%;
     font-size: 15px;
   }
+  
+
+  #ascii-art-15 {
+    top: 69%;
+    right: 60%;
+    font-size: 9px;
+  }
+  #ascii-art-16 {
+    top: 69.4%;
+    left: 60%;
+    font-size: 9px;
+  }
+  #ascii-art-17 {
+    top: 70.5%;
+    left: 40%;
+    font-size: 9px;
+  }
+
+  
+    #ascii-art-18 {
+    top: 70.4%;
+    left: 15%;
+    font-size: 8px;
+  }
+  #ascii-art-19 {
+    top: 70.4%;
+    left: 65%;
+    font-size: 12px;
+  }
+  #ascii-art-20 {
+    top: 71.7%;
+    left: 58%;
+    font-size: 12px;
+  }
+  #ascii-art-21 {
+    top: 71.8%;
+    left: 10%;
+    font-size: 12px;
+  }
+  #ascii-art-22 {
+    top: 72.2%;
+    left: 39%;
+    font-size: 8px;
+  }
+  #ascii-art-23 {
+    top: 73.1%;
+    left: 69%;
+    font-size: 8px;
+  }
+  
+  
+  #ascii-art-24 {
+    top: 73.2%;
+    left: 10%;
+    font-size: 6px;
+  }
+  #ascii-art-25 {
+    top: 74%;
+    left: 50%;
+    font-size: 5px;
+  }
+  #ascii-art-26 {
+    top: 74.5%;
+    left: 70%;
+    font-size: 8px;
+  }
+  #ascii-art-27 {
+    top: 74.5%;
+    left: 20%;
+    font-size: 8px;
+  }
+  
+  
+  
+  
+  
   
   

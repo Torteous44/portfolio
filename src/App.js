@@ -16,7 +16,10 @@ import MusicVisualizer from './components/MusicVisualizer';
 import Grandma from './music/grandma.mp3';
 import Forget from './music/forget.mp3';
 import SendMe from './music/sendme.mp3';
-
+import TropicBirds from './music/tropicbirds.mp3'
+import Twenny from './music/twenny.mp3'
+import UrEyes from './music/urEyes.mp3'
+import Giggle from './music/Giggle.mp3'
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -26,7 +29,7 @@ function App() {
   });
   const [musicPlaying, setMusicPlaying] = useState(false);
 
-  const playlist = [RedMusic, DreamDeath, OutCasts, Grandma, Forget, SendMe];
+  const playlist = [RedMusic, DreamDeath, OutCasts, Grandma, Forget, SendMe, TropicBirds, Twenny, UrEyes, Giggle];
 
   const [easterEggActive, setEasterEggActive] = useState(false);
   const [fadeOpacity, setFadeOpacity] = useState(1); // Controls the fade effect
@@ -34,9 +37,25 @@ function App() {
 
 
   const handleEasterEggActivation = () => {
-    setEasterEggActive(true);
+    if (window.innerWidth === window.screen.width) {
+      setEasterEggActive(true);
+    } else {
+      alert("Please resize the window to match the full screen width to activate this feature!");
+    }
   };
 
+  useEffect(() => {
+    const checkWindowWidth = () => {
+      if (window.innerWidth !== window.screen.width) {
+        setEasterEggActive(false); 
+      }
+    };
+
+    window.addEventListener("resize", checkWindowWidth);
+    return () => {
+      window.removeEventListener("resize", checkWindowWidth);
+    };
+  }, []);
 
 
   const playMusic = () => {
@@ -482,7 +501,7 @@ function App() {
       top: 0,
       left: 0,
       width: '100%',
-      height: '30000px', // Extend to create scrollable content
+      height: '27000px', // Extend to create scrollable content
       backgroundColor: `rgba(255, 255, 255, ${1 - fadeOpacity})`,
       transition: 'background-color 0.3s ease',
       zIndex: 9999,
@@ -927,13 +946,426 @@ __..--""      | |                          |
 
 `}</pre>
       </div>
+
+      <div className="ascii-art-item" id="ascii-art-15">
+<pre>
+  {`
+  
+
+
+                              \\|       ...
+                              -:.     //||\\\\       _.
+                                '::::' Q Q ''::::::+.
+                                      ._"__.'      \\
+                                  ____ '==' _._
+                                .'             '.
+                              .' .:-      .-.    '
+                            .' '.')       ' _  /||.
+                       __.--|_.'  '      : ( \\/' /\\\\
+                      /,=-U'     '      :   '.  ''. /U
+                                ' '  .  (     -._.---"
+                      ....-----( ' . '   -.
+                )   .:\\:::\\    ''. '  '  .'
+            _  (  .:::::::::....--'--..-' \\
+           ( ''-.\\\\:::''               \\    \\
+           \\\\ ""\\\\-'                   ''..:.\\
+            '':-=/)                       '(::)
+                 ''                      .:::/
+ a:f_______________________________     |::/   _________
+                     ______...       .."\\\\/
+  .......------""""""       __..   . \\\\ -. _   .
+                    __..--''    ..'...'- (\\\\ '-'
+          __..---"""  ..:::::::::::::::.'.'-.   .
+        ''               ''''''''':::::::.'._)   .
+                       .-'            ':'''       .
+                    .-'               .            .
+                   '                 .              .
+                                    .                .
+
+       
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-16">
+<pre>
+  {`
+                                               _.-''''-,_
+                                   _,.,_ ,-''           ''-.,_
+                                 /)     (\\                   '''-.
+                                ((      ) )                      '\\
+                                 \\)    (_/                        )\\
+                                  |       /)           '    ,'    / \\
+                                  '\\    ^'            '     (    /  ))
+                                    |      _/\\ ,     /    ,,'\\   (  "'
+                                     \\Y,   |  \\  \\  | ''''| / \\_ \\
+                                       '')_/    \\  \\  )    ( >  ( >
+                                                \\( \\(     |/   |/
+                                               /_(/_(    /_(  /_(
+          
+
+  `}
+</pre>
+      </div>
+
+
+      <div className="ascii-art-item" id="ascii-art-17">
+<pre>
+  {`
+
+       899X7                                                X8997
+     g999999Wm_                                         ,gm999999W.
+   gW99*~~~~VM9Ws                                     ,m99*~~~~VM99m.
+  g999'       '*99i                                  W9Af        Y99W.
+  999[          '*9W_                             ,g9Af           999b
+  999W            '*9W.                          g9Af            i9999
+  9999W_            'V9W.       \\.    ./       g9A~            ,g99999
+  99999**Nm__          ~MW_.     N.  .N     _g9f'         ,_gm**M99999
+  9999|   89999mms___    ~MWm.    [ ]'    gm9f'   ,___mmW9999|   8999P
+  99999mmW99A***M9999999mms2M9s_,g+=Ye.,_W95_mmW9999999****999mmW9999[
+  999999999'     '9999Af'  ~VM999P    9999*~'  ~*9999P      Y99999999[
+  M9999AM99s.   ,g9999'       '99[    99P        Y999W_    _W99*99999!
+  ]9999b'*999999999999b       _999.  d99b.      ,999999999999Af,99999
+  'M9999i 'V*9999999999Wm__gmW9999[  99999mm__gm9999999999A*~  W9999f
+    M9999s      ~~~~~~~~~~~~LmW99f   'M99ms7~~~~~~~~~~~'     ,W9999!
+     V9999Ws_        ___mmW99999[      999999mms__.       ,_m9999A'
+      '~*999999999999A**f~   ]9A[      A99   '~***999999999999Af~
+          2999A*~~'          d9 9     ][]9.          ~~V*999K.
+       ,gW9A~             ,_W9! 9[    9[ M9s_             'V99m_
+      i999A            ,_W99f' i9[    9W  ~M99s_            !999W
+      !9999ms_______mW99Af'   d99A.  /999.   ~*999ms_______mW999A
+       Y9999f~~~~~~~~~'     gW9f~ +_z''~M9m.     ~~~~~~~~~~M9999'
+        V999            ,gm9Af'          ~*9Wm_            ]99A'
+          ~*Nm______mmW99Af                 '*999mms_____gm*f'
+             99999999                              99999999
+
+
+
+
+  `}
+</pre>
+      </div>
+
+
+      <div className="ascii-art-item" id="ascii-art-18">
+<pre>
+  {`
+    ___
+    ,'   '.
+   /_. _,. \\
+  ( /('   \\ :
+   \\\\|    / ;
+    ''   / /
+        / /
+       : :
+       | :    _______
+       :  \\ ,'       '-._
+       '   /    .  .  .  \\
+        : '' ;  ;  ;  ; , :
+         \\'./  /  /  / ; ;;
+          '. ''../__/ / ,.\\
+             ''-.____;-''\\\\\\
+                 \\ //   / '|
+                  ::\\
+                  ||\\\\
+                  || \\\\
+                  ||  ))
+                  || //
+                  ||//
+                  ||/
+                  ||
+                 /||
+                 '||-
+               __,';     
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-19">
+<pre>
+  {`
+                                  _.._
+                                  /   a\\__,
+                                  \\  -.___/
+                                   \\  \\
+                              (\\____)  \\
+                          |\\_(         ))
+                     _____|   (_        /________
+                          _\\____(______/__
+                                ______
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-20">
+<pre>
+  {`
+
+#####\\             _             /#####
+#( )# |          _( )__         | #( )#
+##### |         /_    /         | #####
+#" "# |     ___m/I_ //_____     | #" "#
+# O # |____#-x.\\ /++m\\ /.x-#____| # O #
+#m.m# |   /" \\ ///###\\\\\\ / "\\   | #m.m#
+#####/    ######/     \\######    \\#####
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-21">
+<pre>
+  {`
+
+                         ,_  .--.
+                   , ,   _)\\/    ;--.
+           . ' .    \\_\\-'   |  .'    \\
+          -= * =-   (.-,   /  /       |
+           ' .\\'    ).  ))/ .'   _/\\ /
+               \\_   \\_  /( /     \\ /(
+               /_\\ .--'   '-.    //  \\
+               ||\\/        , '._//    |
+               ||/ /'(_ (_,;'-._/     /
+               \\_.'   )   /'\\       .'
+                    .' .  |  ;.   /'
+                   /      |\\(  '.(
+                  |   |/  | '    '
+                  |   |  /
+                  |   |.'
+               __/'  /
+           _ .'  _.-'
+        _.' '.-;'/
+       /_.-'' / /
+             | /
+            ( /
+           /_/
+
+
+
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-22">
+<pre>
+  {`
+
+
+
+                          .    . ///
+                      ____J)   (//<_
+                       -__ \\   Y .--'
+                          \\ ' / /
+                           ' / '   |\\  __
+                            ' /. ('  ')  '-.
+                           (  '. /  o2 _    \\
+                a8.         \\   '-.--.  '- /
+                888          \\_.   ) '._.'
+               88P'        +_.)_   .              88a.
+     8a       888( .a88   *_.'  '==)             888888a
+     '8ba.ad8888888888P    ''...-'  '            888888888
+       Y888P88888             )  ./            88888888888
+           a88888             (   (           88P 88888 88)
+          888888              *_.' \\          P  888888 8P
+         88Y'888           .-  )  ' \\            888888
+       a88"   88          (_.-'  ) ) )          888888
+      888'    Y88     .-"" '. .-'.' .          a88 '88a
+       Y8b.    '88   '       )   .-'          8P8   '88a
+     aa8888     888. \\ ' _._.--"" '         888P      Y8P
+                      '.   '. '-.  '                    "
+                        '.   '   '._)
+                          '.  '. '( )
+ a:f___________________     '.--)'|_\\   ___________________________
+                          __//_ \\
+                        (:___/ #_\\
+
+
+
+  `}
+</pre>
+      </div>
+
+
+      <div className="ascii-art-item" id="ascii-art-23">
+<pre>
+  {`
+
+                                         .--.
+                  _______             .-"  .'
+          .---u"""       """"---._  ."    %
+        .'                        "--.    %
+   __.--'  o                          "".. "
+  (____.                                  ":
+   '----.__                                 ".
+           '----------__                     ".
+                 ".   . ""--.                 ".
+                   ". ". bIt ""-.              ".
+                     "-.)        ""-.           ".
+                                     "".         ".
+                                        "".       ".
+                                           "".      ".
+                                              "".    ".
+                        ^~^~^~^~^~^~^~^~^~^~^~^~^"".  "^~^~^~^~^
+                                              ^~^~^~^  ~^~
+                                                   ^~^~^~
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-24">
+<pre>
+  {`
+
+                                    _______________________      |      
+                                   |  ________   ________  |     |      
+                                   | |        | |    ___ | |     |      
+                                   | |        | |  ,',.('| |     |      
+                                   | |        | | :  '  | |     |      
+                                   | |        | | :) _  (| |     |      
+                                   | |        | |  ':_)_,| |     |      
+                                   | |________| |________| |     |      
+                                   |  ________   ________  |     |      
+                                   | |        | |        | |     |      
+                                   | |        | |        | |     |      
+                                   | |        | |        | |     |      
+                                   | |        | |        | |     |      
+                                   | |        | |        | |     |      
+                                   | |________| |________| |     |      
+                                   |_______________________|     |      
+                                                                 |      
+                                                                 |      
+                                                                 |      
+                    _____________________________________________|      
+                                                                 '.     
+                          .::.                                     '.   
+                       .:::::::.                                     '. 
+                    .:::::::::' .:.                                    '
+                   ::::::::::' .::::.                                   
+               .::. ':::::::' .:::::::.                                 
+            .::::::.  '::::' .::::::::::                                
+         .:::::::::::.  ':' .::::::::::'                                
+      .::::::::::::::::.    :::::::::::                                 
+   .::::::::::::::::::::' .  '::::::::'                                 
+  :::::::::::::::::::::' .::.  '::::::                                  
+   '::::::::::::::::::' .:::::.  ':::'                                  
+     ':::::::::::::::' .::::::::.  ''                                   
+       '::::::::::::' .::::::::::.                                      
+         '::::::::'  .:::::::::::::.                                    
+           '::::'   .::::::::::::::'                                 
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-25">
+<pre>
+  {`
+
+      *                                                            *
+                              aaaaaaaaaaaaaaaa               *
+                          aaaaaaaaaaaaaaaaaaaaaaaa
+                       aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                     aaaaaaaaaaaaaaaaa           aaaaaa
+                   aaaaaaaaaaaaaaaa                  aaaa
+                  aaaaaaaaaaaaa aa                      aa
+ *               aaaaaaaa      aa                         a
+                 aaaaaaa aa aaaa
+           *    aaaaaaaaa     aaa
+                aaaaaaaaaaa aaaaaaa                               *
+                aaaaaaa    aaaaaaaaaa
+                aaaaaa a aaaaaa aaaaaa
+                 aaaaaaa  aaaaaaa
+                 aaaaaaaa                                 a
+                  aaaaaaaaaa                            aa
+                   aaaaaaaaaaaaaaaa                  aaaa
+                     aaaaaaaaaaaaaaaaa           aaaaaa        *
+       *               aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                          aaaaaaaaaaaaaaaaaaaaaaaa
+                       *      aaaaaaaaaaaaaaaa
+
+
+  `}
+</pre>
+      </div>
+      <div className="ascii-art-item" id="ascii-art-26">
+<pre>
+  {`
+           _,               A                     /\\
+         O/                / \\                   /  \\         _
+         /\\ __  _         /   '.   A            /  ' \\        |\\
+         \\ '. \\/ )       /      './ \\          /   \\  \\      /  \\    ,'
+        '  \\/ /       /        /   \\         / ,    \\     /    \\  /
+             / /       /       ,',--. \\  /\\   /   /  \\ \\   /      \\/
+       '.   (_/       /      .' / ___) \\/  \\ /  /  '    \\.'        '.
+         'A          /    _,'  / / @/  /    /,       \\   \\           '.
+           'AA      /   ,'___  \\/  .|       /   ,'||'. \\ \\
+        ,-'  '.    /   ,-'   '-''._/       /_.-'  ||  '-._\\
+               '._/ ,-'   _    ''./              _.||._
+                  '/  _.-"/    / ''.         _,-'      '-.
+                  /  /'-./    /    \\    _.-'             '-.
+                 /  /   /    /   A  \\.-'                    '-.
+                /'./   /    /   / \\  \\     _                   :
+               (()|    (      ,'   \\  '--+/ 3                 ''.
+                \\||    |   |  \\     \\____|__3                    '._.-.
+                    _,-|   |   \\                                  /
+                _,-'   |   |\\   \\
+             ,-'       )   ) \\   )  _.-"-.
+          ,-'          /  /  /'./.-"     )
+        ,'            /  /  /  /        /
+       '             /'./.-/  /       ,'
+                    /  /   \\  \\    ,-'
+                _.-/  /     \\_/_.-"
+            _.-"   \\  \\    _.-"                    
+       __.-"        \\_/_.-"
+       \\           _.-"
+        \\      _.-"
+         \\__.-"
+
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-27">
+<pre>
+  {`
+                ._,.
+                "..-..pf.
+               -L   ..#'
+             .+_L  ."]#
+             ,'j' .+.j'                 -'.__..,.,p.
+            _~ #..<..0.                 .J-.''..._f.
+           .7..#_.. _f.                .....-..,'4'
+           ;' ,#j.  T'      ..         ..J....,'.j'
+          .' .."^.,-0.,,,,yMMMMM,.    ,-.J...+'.j@
+         .'.'...' .yMMMMM0M@^='""g.. .'..J..".'.jH
+         j' .'1'  q'^)@@#"^".'"='BNg_...,]_)'...0-
+        .T ...I. j"    .'..+,_.'3#MMM0MggCBf....F.
+        j/.+'.{..+       '^~'-^~~""""'"""?'"'''1'
+        .... .y.}                  '.._-:'_...jf
+        g-.  .Lg'                 ..,..'-....,'.
+       .'.   .Y^                  .....',].._f
+       ......-f.                 .-,,.,.-:--&''
+                                 .''...'..'_J'
+                                 .~......'#'
+                                 '..,,.,_]''     
+                                 .L..''..''.     
+     
+
+  `}
+</pre>
+      </div>
     </div>
 
     {/* Music Visualizer */}
     <div
       style={{
         position: 'absolute', // Positioned at the bottom of the scrollable content
-        bottom: '-100px',
+        bottom: '-400px',
         left: '250px',
         width: '1000px',
         height: '150px', // Adjust height as needed
