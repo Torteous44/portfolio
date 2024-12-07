@@ -111,7 +111,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
           style={{
             position: "absolute",
             width: "100%",
-            height: "100%",
+            height: "900px",
           }}
         />
         <div
@@ -169,7 +169,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
   style={{
     width: "300px", // Smaller width
     backgroundColor: "#fff",
-    padding: "10px",
+
 
     borderRadius: "8px", // Rounded corners for a card effect
     fontFamily: "monospace",
@@ -177,7 +177,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     margin: "10px", 
     marginBottom: '0px',
     height: "fit-content", // Ensure the height adjusts to content
-    transform: 'translateY(130px)',
+    transform: 'translateY(150px)',
     cursor: 'none' ,
 
   }}
@@ -189,6 +189,8 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
       color: "#333",
       textAlign: "center", // Center align the title
       cursor: 'none' ,
+      whiteSpace: "normal", // Allow text wrapping
+      wordWrap: "break-word", // Handle long words gracefully
     }}
   >
 
@@ -210,8 +212,8 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
           backgroundColor: currentTrackIndex === index ? "#f0f0f0" : "#fff",
           border: "1px solid #ddd", // Add a border for each item
           borderRadius: "5px",
+          whiteSpace: "normal", // Allow text wrapping
 
-          fontSize: "12px", // Smaller font for compact design
           cursor: 'none' ,
         }}
         onClick={() => {

@@ -51,6 +51,7 @@ body {
 .app-container {
   display: flex;
   height: 100vh;
+
 }
 
 .sidebar {
@@ -60,6 +61,7 @@ body {
   align-self: stretch;
   border-right: 1px solid var(--border-color);
   height: 100vh;
+  z-index: 90;
 }
 
 .profile p {
@@ -313,7 +315,7 @@ body.light-mode .blurry-shape {
 .sidebar,
 .content {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* Footer */

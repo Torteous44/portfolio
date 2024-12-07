@@ -20,6 +20,17 @@ import TropicBirds from './music/tropicbirds.mp3'
 import Twenny from './music/twenny.mp3'
 import UrEyes from './music/urEyes.mp3'
 import Giggle from './music/Giggle.mp3'
+import LocomotiveScroll from 'locomotive-scroll';
+import 'locomotive-scroll/dist/locomotive-scroll.css'; 
+import image1 from './assets/images/cool1.png'
+import image2 from './assets/images/cool2.png'
+import image3 from './assets/images/cool3.png'
+import image4 from './assets/images/cool4.png'
+import image5 from './assets/images/cool5.png'
+import image6 from './assets/images/cool6.png'
+import image7 from './assets/images/cool7.png'
+
+
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -34,6 +45,21 @@ function App() {
   const [easterEggActive, setEasterEggActive] = useState(false);
   const [fadeOpacity, setFadeOpacity] = useState(1); // Controls the fade effect
   const audioRef = useRef(new Audio(RedMusic)); 
+
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+        const locomotive = new LocomotiveScroll({
+            el: scrollRef.current,
+            smooth: true,
+        });
+        return () => {
+            locomotive.destroy();
+        };
+    }
+}, []);
+
 
 
   const handleEasterEggActivation = () => {
@@ -71,10 +97,10 @@ function App() {
     const scrollTop = e.target.scrollTop;
     const maxScroll = e.target.scrollHeight - e.target.clientHeight;
   
-    // Calculate opacity based on scroll position, reaching 0 at 50% scroll
-    const halfwayPoint = maxScroll * 0.5; // 50% of the scroll
+
+    const halfwayPoint = maxScroll * 0.5; 
     const opacity = scrollTop <= halfwayPoint
-      ? 1 - scrollTop / halfwayPoint // Fade out
+      ? 1 - scrollTop / halfwayPoint 
       : 0; // Fully white after halfway point
     setFadeOpacity(opacity);
   
@@ -85,10 +111,11 @@ function App() {
       
     }
 
+    
     if (scrollTop === 0 && easterEggActive) {
       setEasterEggActive(false);
 
-          // Stop the music
+
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0; // Reset the music
@@ -96,7 +123,6 @@ function App() {
     setMusicPlaying(false); // Reset the ability to play music
     }
   };
-  
   
     const [counter, setCounter] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -128,15 +154,15 @@ function App() {
     };
   
     useEffect(() => {
-      fetchCounter(); // Fetch the initial counter value
+      fetchCounter(); 
     }, []);
 
     useEffect(() => {
-      // Reset fade and music state when Easter egg is deactivated
+      
       if (!easterEggActive) {
         setFadeOpacity(1);
         setMusicPlaying(false);
-        document.body.style.backgroundColor = ''; // Reset background
+        document.body.style.backgroundColor = ''; 
       }
     }, [easterEggActive]);
     useEffect(() => {
@@ -296,8 +322,8 @@ function App() {
 <div
   className="app-container"
   style={{
-    backgroundColor: `rgba(255, 255, 255, ${1 - fadeOpacity})`, // Transition to white dynamically
-    transition: 'background-color 0.3s ease', // Smooth background color transition
+    backgroundColor: `rgba(255, 255, 255, ${1 - fadeOpacity})`, 
+    transition: 'background-color 0.3s ease', 
   }}
 >
 {!easterEggActive && (
@@ -311,10 +337,10 @@ function App() {
       <aside
   className="sidebar"
   style={{
-    backgroundColor: `rgba(255, 255, 255, ${1 - fadeOpacity})`, // Fade background dynamically
+    backgroundColor: `rgba(255, 255, 255, ${1 - fadeOpacity})`, 
     transition: 'background-color 0.3s ease',
-    borderWidth: `${fadeOpacity * 1}px`, // Dynamically adjust border width
-    display: fadeOpacity === 0 ? 'none' : 'block', // Hide the sidebar when it's fully faded
+    borderWidth: `${fadeOpacity * 1}px`, 
+    display: fadeOpacity === 0 ? 'none' : 'block', 
   }}
 >
   <div
@@ -1224,7 +1250,7 @@ __..--""      | |                          |
                                    |  ________   ________  |     |      
                                    | |        | |    ___ | |     |      
                                    | |        | |  ,',.('| |     |      
-                                   | |        | | :  '  | |     |      
+                                   | |        | | :  '   | |     |      
                                    | |        | | :) _  (| |     |      
                                    | |        | |  ':_)_,| |     |      
                                    | |________| |________| |     |      
@@ -1359,19 +1385,341 @@ __..--""      | |                          |
   `}
 </pre>
       </div>
+
+      <div className="ascii-art-item" id="ascii-art-28">
+<pre>
+  {`
+  
+
+
+             .
+                            _..------.._        +    ,'
+                         .-'    i       '-.        ,;
+                   .   .'.      |.         '.    .'/
+            '-_       ;.      , jl.____     '. .'.'
+              '';-_   ;. ._..---"""     """--.:' /
+     .          '.-..:,-"   ,_.-'''--'''-9"h' .'   .
+                  '.'^.,-Ce/    .'"'.   _.'  /
+                    '. '-h'_.._/0 " 0\\''    {\\
+            +         '.      |'-^Y^- |     //       .
+                       ('\\     \\_."._/\\...-;..-.
+                       '._'._,'' '''    _.:---'''
+                          ;-....----''''
+                         /   (                   +
+                         |  (''
+                         ''.^'
+
+
+  `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-29">
+<pre>
+  {`
+                                                           _..._       .-'''-.                                                             .-'''-.                                                                       .-'''-.                               
+                                             .---.    .-'_..._''.   '   _    \\                                                           '   _    \\                                                                    '   _    \\          .---._______       
+                               __.....__     |   |  .' .'      '.\\/   /' '.   \\  __  __   ___         __.....__                        /   /' '.   \\            __  __   ___                                         /   /' '.   \\         |   |\\  ___ ''.    
+                   _     _ .-''         '.   |   | / .'          .   |     \\  ' |  |/  '.'   '.   .-''         '.                     .   |     \\  '           |  |/  '.'   '..-.          .-                _     _.   |     \\  '         |   | ' |--.\\  \\   
+             /\\    \\\\   ///     .-''"'-.  '. |   |. '            |   '      |  '|   .-.  .-.   ' /     .-''"'-.  '.                .| |   '      |  '          |   .-.  .-.   '\\ \\        / /          /\\    \\\\   //|   '      |  '.-,.--. |   | | |    \\  '  
+             '\\\\  //\\\\ ///     /________\\   \\|   || |            \\    \\     / / |  |  |  |  |  |/     /________\\   \\             .' |_\\    \\     / /           |  |  |  |  |  | \\ \\      / /           '\\\\  //\\\\ // \\    \\     / / |  .-. ||   | | |     |  ' 
+               \\'//  \\'/ |                  ||   || |             '.   ' ..' /  |  |  |  |  |  ||                  |           .'     |'.   ' ..' /            |  |  |  |  |  |  \\ \\    / /              \\'//  \\'/   '.   ' ..' /  | |  | ||   | | |     |  | 
+                \\|   |/  \\    .-------------'|   |. '                '-...-''   |  |  |  |  |  |\\    .-------------'          '--.  .-'   '-...-''             |  |  |  |  |  |   \\ \\  / /                \\|   |/       '-...-''   | |  | ||   | | |     ' .' 
+                 '        \\    '-.____...---.|   | \\ '.          .              |  |  |  |  |  | \\    '-.____...---.             |  |                          |  |  |  |  |  |    \\ '  /                  '                       | |  '- |   | | |___.' /'  
+                           '.             .' |   |  '. '._____.-'/              |__|  |__|  |__|  '.             .'              |  |                          |__|  |__|  |__|     \\  /                                           | |     |   |/_______.'/   
+                             '''-...... -'   '---'    '-.______ /                                   '''-...... -'                |  '.'                                             / /                                            | |     '---'\\_______|/    
+                                                               '                                                                 |   /                                          |'-' /                                             |_|                        
+                                                                                                                                 ''-'                                            '..'                                                                         
+ `}
+</pre>
+      </div>
+
+
+      <div className="ascii-art-item" id="ascii-art-30">
+<pre>
+  {`
+
+
+                                /|
+                               / |                                           /|
+                              /  |                                          / |
+                             /    \\                                        /  /
+                  ____---~~~~      ~~~~~-------_______                    /   |
+___________----~~~ O \\                                ~~~~~----_____----~~    |
+      ~~~~~~~--_____  )                                         _____         |
+             __--~~~ /                                _____----~~~~~~------   \\
+               ~~~~~~----_\\ \\____________--------~~~~~                     \\  |
+                           \\ \\                                              \\ |
+                             \\|                                              \\|
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-31">
+<pre>
+  {`
+
+
+                                                        ,
+                                            .__ ._       \\_.
+                                     _, _.  '  \\/   \\.-  /
+                                      \\/     .-_'   // |/     \\,
+                     .-""""-.          \\.   '   \\'. ||  \\.-'  /
+                    F        Y        .-.'-(   _/\\ V/ \\\\//,-' >-'   ._,
+                   F          Y   .__/   '. \\.   ' J   ) ./  / __._/
+                  J         \\, I    '   _/ \\  \\  | |  / /  .'-'.-' '._,
+           (       L   \\_.--.| \\_.      ' .___ '\\: | / .--'.-'"     \\
+         \\ '\\    .  L   /    \\\\/        ._/'-.'  \\ .'.' .'---./__   '
+    \\__  '\\ ) \\._/   '-.__. ' \\\\_. '   .---.  \\     /  /  ,   '  '
+  --'  \\\\  ): // \\,            '-.'__.'     '- \\  /   / _/-.---.__.- .
+     _.-'.'/ /'\\_, ._     >--.-""'____.--"'_     '   /.'..' \\   \\   _/'
+ _ .---._\\ \\'/ '__./__.-..  / .-|(    x_.-'___  |   :' /    _..---_' \\
+ .:' /'\\ '. '..'.--'\\      /.' /'-'._  '-,'   ' '   I '_.--'__--..___.--._.-
+     '  '. '\\/'/  _.   _.-'      _.____./ .-.--""-. .-"    ' _..-.---'   \\
+  -._ .--.\\ / /-./     /   .---'-//.___. .-'       \\__ .--.  '    '.     ''-
+ ,--'/.-. ^.   .-.--.  ' _/    _//     ./   _..   .'  '.    \\ \\    |_.
+    /' | >.   ' | \\._.-       '    _..'  '.' . '.       )    | |\\  '
+  ./ \\ \\'  ) c| /  \\     \\_..  .--'    ,\\ \\_/'  :    )  ('-. '.|'\\\\
+   \\'  / ,-.  | ' ./'  ._/ '\\\\'.--.,-((  '.'.__ |   _/   \\    |)  '--._/'
+______'\\   |  < __________  //'  //  _)   )/-._'.  (,-')  )  / \\_.    /\\. _____
+a:f        |  |        .__./    //  '\\  |//    '.\\ '\\ (  (  <'   ._  '
+           >  |      _.  /   ..-\\ _    _/ \\_.  \\ '\\    \\_ '---.-'__
+        . /  '-   _.'        /   '   _/|       J  /'     '-,,-----.'-.
+            '  .:'          ''      '          < '   f  I //        '-\\_,
+              '                         \\.     J        I/\\_.        ./
+         __/                            ':     I  .:    K  '          '
+         \\/ )                            ',   J         L
+          )_(_                             .  F  .-'    J
+         /    '.                           .  I  (.   . I _.-.._
+   '    <'    \\ )                     _.---.J/      :'   L -'
+ .:.     \\. _.->/                        _.-'_.)     ' '-.'---.,_.
+:<        (    \\                    .--""   .F' J) '.'L.__'-.___
+.:        |-'\\_.|                          Y ..Z     ))   '--'  '-
+.         ) | > :                            . '    :'
+          / ) L_J                            .x,.
+          L_J .,                             .:<.,
+        .''   '                               :J.,'
+                                           . ;.+K,:.
+                                               .,L+.,
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-32">
+<pre>
+  {`
+
+                                 _ .--.
+                                ( '    )
+                             .-'      '--,
+                  _..----.. (             )'-.
+                .'_|' _|' _|(  .__,           )
+               /_|  _|  _|  _(        (_,  .-'
+              ;|  _|  _|  _|  '-'__,--''--'
+              | _|  _|  _|  _| |
+          _   ||  _|  _|  _|  _|
+        _( '--.\\_|  _|  _|  _|/
+     .-'       )--,|  _|  _|.'
+    (__, (_      ) )_|  _| /
+   jgs'-.__.\\ _,--'\\|__|__/
+                    ;____;
+                     \\YT/
+                      ||
+                     |""|
+                     '=='
+
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-34">
+<pre>
+  {`
+
+                            |
+            '               |                      
+                            I      / '
+                     \\      8
+                 '    \\          /
+        .'     ,          .---.      .'     ,
+     /                   '..   '       ,
+            -- , --==   : <     :  ====-----
+        .                . -'  .'
+                .'        '---'          ,       ,
+                       '         \\
+     /       .        /  /  I ,'  \\          /      .'
+         ,  '               I
+  / '         .'            |
+                       '              .'                 ,
+                     /          /             /
+     .'       .'    .'             .    ,    .'     /
+                          _                             .
+  /       .              (")   _                  .'
+         ''        a___.'  \\  $"$  ,k
+     ,        ,    '---'  || ,$..\\//                 /
+                      / _ ||//'. ('      .'     .'   ,
+ __________  ____    ( '^.'%/  ( x\\_   ________________________a:f__
+           /          \\\\ | "   |/ '.)
+                '     /J ||   //  (/         .'
+   '         ,      .a   ''   ''        '           .
+    ,  /           88   a8    8a   8.              '
+                   '8a.8P     '88a.88      ,'
+        .'       .a8888:a888a  '8888'
+              a888888b88P  'Y88d88P888a
+                 a88b           888   "
+                 '"'
+
+
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-33">
+<pre>
+  {`
+
+
+                                  ,~-.
+                                 (  ' )-.          ,~''-.
+                              ,~' '  ' ) )       _(   _) )
+                             ( ( .--.===.--.    (  '    ' )
+                              '.%%.;::|888.#'.   '-''~~=~'
+                              /%%/::::|8888\\##\\
+                             |%%/:::::|88888\\##|
+                             |%%|:::::|88888|##|.,-.
+                             \\%%|:::::|88888|##/    )_
+                              \\%\\:::::|88888/#/ ( ''  )
+                               \\%\\::::|8888/#/(  ,  -''-.
+                           ,~-. '%\\:::|888/#'(  (     ') )
+                          (  ) )_ '\\__|__/'   '~-~=--~~='
+                         ( ' ')  ) [VVVVV]
+                        (_(_.~~~'   \\|_|/   hjw
+                                    [XXX]
+                                    '"""'
+
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-35">
+<pre>
+  {`
+
+         _               a  h u
+        (_)       __/7 a        U 
+\\               c' ^C             U                     UUUUUUU
+ >   ,---.--.__.{{,/'               UUU         UUUUUU
+ _  '^^' )_,_  . '/      .--.           UUUUUU        
+' \\     < \\  '--)/|   '---._ \\ ^.    
+ .--._          / '         '--..-._           _________..--------a:f 
+'   / '--._              /\\_.    '---._____.--'
+
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-36">
+<pre>
+  {`
+
+          _________________________________________________
+         /                                                /|
+        / _/_/_/_/_/ _/_/_/_/_/ _/_/_/_/ _/___/ _/_/_/_/ //
+       /                                                //|
+      / _/_/_/_/_/_/_/_/_/_/_/_/_/__/  _/_/_/ _/_/_/_/ //||
+     / __/_/_/_/_/_/_/_/_/_/_/_/_/  / _/_/_/ _/_/_/_/ //_|/    ,---------
+    /_/__/_/_/_/_/_/_/_/_/_/_/_/___/   _/   _/_/_/_/ //       /__/__/__/ /|
+   / __/_/_/_/_/_/_/_/_/_/_/_/__/   _/_/_/ _/_/_/ / //       /          / |
+  /   __/_________________/               ___/_/_/ //       /          /  .
+ /                                                //       /          / .'
+(________________________________________________(/       (__________(.'
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-37">
+<pre>
+  {`
+
+
+                     ,-.
+         '._        /  |        ,
+            '--._  ,   '    _,-'
+     _       __  '.|  / ,--'
+      '-._,-'  '-. \\ : /
+           ,--.-.-''.'.-.,_-
+         _ '--'-'-;.'.'-''--
+     _,-' '-.__,-' / : \\
+                _,'|  \\ '--._
+           _,--'   '   .     '-.
+         ,'         \\  |        '
+
+
+
+ `}
+</pre>
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-38">
+<pre>
+  {`
+
+
+             |                              ____.......__
+             |\\      .'           _.--""''''             ''''--._
+             | \\   .'/      ..--''                             .-''
+      .._    |  \\.' /  ..-''                                .-'
+       '.''"-:  '  .-''                                  .-'
+         '.             __...----""""""""""--..           \\
+         -         ..-''                       ''""-._     \\
+       .'  _.      \\                                  '"-   \\
+      _.-'' |  /-.  \\                                    '-. \\
+            | /   '. \\                                      '.\\
+            |/      '-\\                                       '.
+            |
+
+ `}
+</pre>
+      </div>
+      <img src={image1} alt="lit pic2" className="image1" />
+      <img src={image2} alt="lit pic" className="image2" />
+      <img src={image3} alt="lit pi2c" className="image3" />
+      <img src={image4} alt="lit pi2c" className="image4" />
+      <img src={image5} alt="lit pi2c" className="image5" />
+      <img src={image6} alt="lit pi2c" className="image6" />
+      <img src={image7} alt="lit pi2c" className="image7" />
+
+
+
+      
     </div>
 
     {/* Music Visualizer */}
     <div
       style={{
-        position: 'absolute', // Positioned at the bottom of the scrollable content
-        bottom: '-400px',
+        position: 'absolute', 
+        bottom: '6000px',
+        padding: 0,
         left: '250px',
         width: '1000px',
-        height: '150px', // Adjust height as needed
+        height: '100px', 
         backgroundColor: '#000',
-        zIndex: 10000, // High z-index for visibility
-        opacity: 1, // Fully visible
+        zIndex: 10000, 
+        opacity: 1,
       }}
     >
       {/* Audio Element */}
@@ -1379,6 +1727,8 @@ __..--""      | |                          |
       {/* Visualizer Component */}
       <MusicVisualizer audioElement={audioRef.current} playlist={playlist}/>
     </div>
+    <footer style={{ fontFamily: 'sans-serif', textAlign: 'center' }} >What you doin all the way down here?</footer>
+
   </div>
 )}
 

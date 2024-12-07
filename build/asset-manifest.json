@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.0f877fee.css",
-    "main.js": "/static/js/main.049ba791.js",
+    "main.css": "/static/css/main.edf5fbb2.css",
+    "main.js": "/static/js/main.8c85c8cf.js",
     "static/media/tropicbirds.mp3": "/static/media/tropicbirds.f4e8adf43cac986245e4.mp3",
     "static/media/twenny.mp3": "/static/media/twenny.65e7d464351455794829.mp3",
     "static/media/Outcasts.mp3": "/static/media/Outcasts.da74d13b85b3f84e2e93.mp3",
@@ -10,8 +10,15 @@
     "static/media/urEyes.mp3": "/static/media/urEyes.48d99c45c2c580c27591.mp3",
     "static/media/Giggle.mp3": "/static/media/Giggle.8d2ed873d2b38da0aaa7.mp3",
     "static/media/sendme.mp3": "/static/media/sendme.9373a0729d9fbec7aabe.mp3",
+    "static/media/cool5.png": "/static/media/cool5.b5da496e0060da367c69.png",
+    "static/media/cool1.png": "/static/media/cool1.3a4c0271c50e33805f39.png",
     "static/media/grandma.mp3": "/static/media/grandma.925470509b97fd6d8d03.mp3",
+    "static/media/cool4.png": "/static/media/cool4.4c4dc3a48ad9e8227506.png",
     "static/media/dreamdeath.mp3": "/static/media/dreamdeath.c38f0f427d60754597e5.mp3",
+    "static/media/cool2.png": "/static/media/cool2.e3edc6ec9492448509b9.png",
+    "static/media/cool3.png": "/static/media/cool3.6872b8bb27619eba5049.png",
+    "static/media/cool6.png": "/static/media/cool6.0d3ec97cbbb697febb73.png",
+    "static/media/cool7.png": "/static/media/cool7.89f600e0562404b0b450.png",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
     "static/media/restaurantmenu.png": "/static/media/restaurantmenu.6b56da9ef2f684a76a6c.png",
@@ -28,11 +35,11 @@
     "static/media/LarkenDEMO-Regular.otf": "/static/media/LarkenDEMO-Regular.eb993a16e5e5423b14a1.otf",
     "static/media/LarkenDEMO-Light.otf": "/static/media/LarkenDEMO-Light.1d3bfb1ba794972fdfc5.otf",
     "index.html": "/index.html",
-    "main.0f877fee.css.map": "/static/css/main.0f877fee.css.map",
-    "main.049ba791.js.map": "/static/js/main.049ba791.js.map"
+    "main.edf5fbb2.css.map": "/static/css/main.edf5fbb2.css.map",
+    "main.8c85c8cf.js.map": "/static/js/main.8c85c8cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f877fee.css",
-    "static/js/main.049ba791.js"
+    "static/css/main.edf5fbb2.css",
+    "static/js/main.8c85c8cf.js"
   ]
 }
