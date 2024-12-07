@@ -1,0 +1,93 @@
+.ascii-art-container {
+    position: relative;
+    z-index: 10000; /* Ensure ASCII arts are above fading background */
+  }
+  
+  .ascii-art-item {
+    position: absolute; /* Use absolute positioning for flexible placement */
+    font-family: monospace; /* Ensures ASCII art renders correctly */
+    font-size: 14px; /* Adjust as needed */
+    color: #000; /* Black text to stand out on the background */
+  }
+  
+  /* Example placements */
+  #ascii-art-1 {
+    top: 58%;
+    left: 0%;
+    font-size: 8px;
+  }
+  
+  #ascii-art-2 {
+    top: 98%;
+    right: 15%;
+    font-size:7px;
+
+  }
+  
+  #ascii-art-3 {
+    top: 70%;
+    left: 10%;
+    font-size: 10px;
+  }
+  
+  #ascii-art-4 {
+    top: 90%;
+    right: 10%;
+    font-size: 15px;
+
+  }
+  
+  #ascii-art-5 {
+    top: 100%;
+    left: 15%;
+  }
+  
+  #ascii-art-6 {
+    top: 60%;
+    right: 15%;
+    font-size: 10px;
+  }
+  
+  #ascii-art-7 {
+    top: 88%;
+    left: 0%;
+    font-size: 8px;
+  }
+  
+  #ascii-art-8 {
+    top: 80%;
+    right: 20%;
+    font-size: small;
+  }
+  #ascii-art-9 {
+    top: 75%;
+    right: 40%;
+    font-size: 6px;
+  }
+
+  #ascii-art-10 {
+    top: 68%;
+    right: 55%;
+    font-size: 6px;
+  }
+  
+  #ascii-art-11 {
+    top: 62%;
+    right: 55%;
+    font-size: 7px;
+  }
+    
+  #ascii-art-12 {
+    top: 62%;
+    right: 55%;
+    font-size: 7px;
+  }
+  
+    
+  #ascii-art-13 {
+    top: 65%;
+    right: 30%;
+    font-size: 7px;
+  }
+  
+  

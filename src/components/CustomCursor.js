@@ -13,9 +13,9 @@ const CustomCursor = () => {
 
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return; // Do not render custom cursor
+    if (prefersReducedMotion) return;
 
-    // Debounced handler to prevent rapid state changes
+
     const debouncedSetHover = debounce((hover) => setIsHovering(hover), 50);
 
     // Update cursor position
@@ -39,7 +39,7 @@ const CustomCursor = () => {
       }
     };
 
-    // Add event listeners
+
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseover', onMouseOver);
     document.addEventListener('mouseout', onMouseOut);

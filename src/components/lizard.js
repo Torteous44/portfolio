@@ -5,6 +5,7 @@ const AsciiLizard = () => {
   const [tongueExtended, setTongueExtended] = useState(false);
 
   const handleClick = () => {
+    console.log("ck");
     setTongueExtended((prev) => !prev);
   };
 
@@ -17,6 +18,7 @@ const AsciiLizard = () => {
     "      `'''       `\\__   /\\",
     "            ')",
   ];
+
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -40,7 +42,12 @@ const AsciiLizard = () => {
       </pre>
       {/* Tongue Element */}
       <div className={`lizard-tongue ${tongueExtended ? 'show' : ''}`}>
-        {'_______'}
+
+        
+        {['_____/\n',
+         '     \\',]}
+
+
       </div>
     </div>
   );

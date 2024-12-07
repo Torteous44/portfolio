@@ -36,7 +36,7 @@ body.light-mode .custom-cursor {
 
 /* Light Mode Hover Effect */
 body.light-mode .custom-cursor.cursor-hover {
-  border: 0.2px solid rgba(0, 0, 0, 0.5); /* Add a small border on hover in light mode */
+  border: 0.2px solid rgba(0, 0, 0, 0.5);   
 }
 
 

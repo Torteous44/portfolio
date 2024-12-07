@@ -1,5 +1,5 @@
 .project-card {
-  background-color: var(--card-bg-color, #1e1e1e); /* Default to dark mode */
+  background-color: var(--card-bg-color, #1e1e1e); 
   border: 1px solid var(--card-border-color, #2a2a2a);
   border-radius: 8px;
   overflow: hidden;
@@ -83,57 +83,57 @@ z-index: 1;
 
 /* Light Mode Overrides */
 body.light-mode .project-card {
-  --card-bg-color: #ffffff; /* Light background */
-  --card-border-color: #dcdcdc; /* Light border */
+  --card-bg-color: #ffffff; 
+  --card-border-color: #dcdcdc;
 }
 
 body.light-mode .project-content h3 {
-  --card-title-color: #333333; /* Darker text */
+  --card-title-color: #333333;
 }
 
 body.light-mode .project-content p {
-  --card-text-color: #555555; /* Slightly darker text */
-}
-
-body.light-mode .technologies li {
-  --tech-bg-color: #f4f4f4; /* Light background for tech items */
-  --tech-text-color: #333333; /* Darker text for tech items */
-}
-
-body.light-mode .project-links a {
-  --link-color: #555555; /* Darker link */
-}
-
-body.light-mode .project-links a:hover {
-  --link-hover-color: #6200ea; /* Brighter hover color for links */
-}
-/* Light Mode Overrides */
-body.light-mode .project-card {
-  --card-bg-color: #ebebeb; /* Light background */
-  --card-border-color: #8c8a8a; /* Light border */
-}
-
-body.light-mode .project-content h3 {
-  --card-title-color: #5a5a5a; /* Darker text */
-  font-family: "fragGlare", sans-serif; /* Light mode font for titles */
-}
-
-body.light-mode .project-content p {
-  --card-text-color: #555555; /* Slightly darker text */
-  font-family: "larkenlight", sans-serif; /* Light mode font for paragraphs */
+  --card-text-color: #555555; 
 }
 
 body.light-mode .technologies li {
   --tech-bg-color: #f4f4f4; 
-  --tech-text-color: #333333; /* Darker text for tech items */
-  font-family: "fragGlareli", sans-serif; /* Light mode font for tech items */
+  --tech-text-color: #333333; 
 }
 
 body.light-mode .project-links a {
-  --link-color: #555555; /* Darker link */
-  font-family: "HemVarli", sans-serif; /* Light mode font for links */
+  --link-color: #555555; 
 }
 
 body.light-mode .project-links a:hover {
-  --link-hover-color: #470000; /* Brighter hover color for links */
+  --link-hover-color: #6200ea; 
+}
+/* Light Mode Overrides */
+body.light-mode .project-card {
+  --card-bg-color: #ebebeb; 
+  --card-border-color: #8c8a8a;
+}
+
+body.light-mode .project-content h3 {
+  --card-title-color: #5a5a5a; 
+  font-family: "fragGlare", sans-serif; 
+}
+
+body.light-mode .project-content p {
+  --card-text-color: #555555; 
+  font-family: "larkenlight", sans-serif; 
+}
+
+body.light-mode .technologies li {
+  --tech-bg-color: #f4f4f4; 
+  --tech-text-color: #333333; 
+  font-family: "fragGlareli", sans-serif;
+}
+
+body.light-mode .project-links a {
+  --link-color: #555555; 
+  font-family: "HemVarli", sans-serif; 
+}
+
+body.light-mode .project-links a:hover {
+  --link-hover-color: #470000; 
 }
