@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.cd135fa8.css",
-    "main.js": "/static/js/main.e3b8f26e.js",
+    "main.js": "/static/js/main.0470863b.js",
     "static/media/tropicbirds.mp3": "/static/media/tropicbirds.f4e8adf43cac986245e4.mp3",
     "static/media/twenny.mp3": "/static/media/twenny.65e7d464351455794829.mp3",
     "static/media/Outcasts.mp3": "/static/media/Outcasts.da74d13b85b3f84e2e93.mp3",
     "static/media/forget.mp3": "/static/media/forget.07314b4148bf05188699.mp3",
     "static/media/Red.mp3": "/static/media/Red.b3ca9d2a402018c4b7fb.mp3",
+    "static/media/urEyes.mp3": "/static/media/urEyes.48d99c45c2c580c27591.mp3",
+    "static/media/Giggle.mp3": "/static/media/Giggle.8d2ed873d2b38da0aaa7.mp3",
     "static/media/sendme.mp3": "/static/media/sendme.9373a0729d9fbec7aabe.mp3",
     "static/media/grandma.mp3": "/static/media/grandma.925470509b97fd6d8d03.mp3",
     "static/media/dreamdeath.mp3": "/static/media/dreamdeath.c38f0f427d60754597e5.mp3",
@@ -27,10 +29,10 @@
     "static/media/LarkenDEMO-Light.otf": "/static/media/LarkenDEMO-Light.1d3bfb1ba794972fdfc5.otf",
     "index.html": "/index.html",
     "main.cd135fa8.css.map": "/static/css/main.cd135fa8.css.map",
-    "main.e3b8f26e.js.map": "/static/js/main.e3b8f26e.js.map"
+    "main.0470863b.js.map": "/static/js/main.0470863b.js.map"
   },
   "entrypoints": [
     "static/css/main.cd135fa8.css",
-    "static/js/main.e3b8f26e.js"
+    "static/js/main.0470863b.js"
   ]
 }
