@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.2834e209.css",
+    "main.css": "/static/css/main.394d866a.css",
     "main.js": "/static/js/main.9acf2be5.js",
     "static/media/tropicbirds.mp3": "/static/media/tropicbirds.f4e8adf43cac986245e4.mp3",
     "static/media/Deceptacon.mp3": "/static/media/Deceptacon.a0f928e3810be31496d6.mp3",
@@ -33,11 +33,11 @@
     "static/media/LarkenDEMO-Regular.otf": "/static/media/LarkenDEMO-Regular.eb993a16e5e5423b14a1.otf",
     "static/media/LarkenDEMO-Light.otf": "/static/media/LarkenDEMO-Light.1d3bfb1ba794972fdfc5.otf",
     "index.html": "/index.html",
-    "main.2834e209.css.map": "/static/css/main.2834e209.css.map",
+    "main.394d866a.css.map": "/static/css/main.394d866a.css.map",
     "main.9acf2be5.js.map": "/static/js/main.9acf2be5.js.map"
   },
   "entrypoints": [
-    "static/css/main.2834e209.css",
+    "static/css/main.394d866a.css",
     "static/js/main.9acf2be5.js"
   ]
 }
