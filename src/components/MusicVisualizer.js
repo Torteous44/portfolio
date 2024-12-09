@@ -63,6 +63,12 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     };
 
     draw();
+    
+    const handleSongEnd = () => {
+      playNextTrack();
+    };
+
+    audioElement.addEventListener("ended", handleSongEnd);
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
@@ -94,6 +100,8 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
         width: "100%",
         height: "100vh",
         backgroundColor: "#FFFFFF",
+        zIndex: '-1',
+
       }}
     >
       {/* Visualizer Section */}
@@ -170,18 +178,22 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     width: "300px", // Smaller width
     backgroundColor: "#fff",
 
+    overflowY: "auto", // Enable vertical scrolling
 
     borderRadius: "8px", // Rounded corners for a card effect
     fontFamily: "monospace",
     fontSize: "12px", // Smaller text size
     margin: "10px", 
     marginBottom: '0px',
-    height: "fit-content", // Ensure the height adjusts to content
-    transform: 'translateY(150px)',
+    height: "420px", // Fixed height for the list
+    scrollbarWidth: "thin", // For Firefox
+    scrollbarColor: "#555 #e0e0e0", // Thumb and track colors for Firefox
+    transform: 'translateY(175px)',
     cursor: 'none' ,
 
   }}
 >
+  
   <h3
     style={{
       fontSize: "14px",

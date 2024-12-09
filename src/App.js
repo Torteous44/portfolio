@@ -22,15 +22,11 @@ import UrEyes from './music/urEyes.mp3'
 import Giggle from './music/Giggle.mp3'
 import LocomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/dist/locomotive-scroll.css'; 
-import image1 from './assets/images/cool1.png'
-import image2 from './assets/images/cool2.png'
-import image3 from './assets/images/cool3.png'
-import image4 from './assets/images/cool4.png'
-import image5 from './assets/images/cool5.png'
-import image6 from './assets/images/cool6.png'
-import image7 from './assets/images/cool7.png'
-
-
+import wombCore from './music/wombCore.mp3';
+import silver from './music/silver.mp3';
+import Prim from './music/Prim.mp3';
+import pinCycle from './music/pinCycle.mp3';
+import deceptacon from './music/Deceptacon.mp3';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -40,7 +36,7 @@ function App() {
   });
   const [musicPlaying, setMusicPlaying] = useState(false);
 
-  const playlist = [RedMusic, DreamDeath, OutCasts, Grandma, Forget, SendMe, TropicBirds, Twenny, UrEyes, Giggle];
+  const playlist = [RedMusic, DreamDeath, OutCasts, Grandma, Forget, SendMe, TropicBirds, Twenny, UrEyes, Giggle, wombCore, silver, Prim, pinCycle, deceptacon ];
 
   const [easterEggActive, setEasterEggActive] = useState(false);
   const [fadeOpacity, setFadeOpacity] = useState(1); // Controls the fade effect
@@ -404,10 +400,6 @@ function App() {
       </div>
     </div>
 
-
-
-
-
         <button className="theme-toggle-wrapper" onClick={toggleTheme}>
   <span className="theme-toggle-text">
     {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
@@ -489,9 +481,6 @@ function App() {
         </section>
 
 
-
-
-
         <footer className="footer"
         >
   {theme === 'light' && (
@@ -503,11 +492,6 @@ function App() {
       </div>
 
     </div>
-
-
-
-    
-
   )}
 
           
@@ -517,7 +501,7 @@ function App() {
         </p>
 
       </footer>
-{/* Main Easter Egg Section */}
+
 {/* Main Easter Egg Section */}
 {easterEggActive && (
   <div
@@ -545,6 +529,7 @@ function App() {
 
     {/* ASCII Art Containers */}
     <div className="ascii-art">
+      
       <div className="ascii-art-item" id="ascii-art-1">
         <pre>
           {`
@@ -1417,7 +1402,7 @@ __..--""      | |                          |
       <div className="ascii-art-item" id="ascii-art-29">
 <pre>
   {`
-                                                           _..._       .-'''-.                                                             .-'''-.                                                                       .-'''-.                               
+                                                         _..._       .-'''-.                                                              .-'''-.                                                                       .-'''-.                               
                                              .---.    .-'_..._''.   '   _    \\                                                           '   _    \\                                                                    '   _    \\          .---._______       
                                __.....__     |   |  .' .'      '.\\/   /' '.   \\  __  __   ___         __.....__                        /   /' '.   \\            __  __   ___                                         /   /' '.   \\         |   |\\  ___ ''.    
                    _     _ .-''         '.   |   | / .'          .   |     \\  ' |  |/  '.'   '.   .-''         '.                     .   |     \\  '           |  |/  '.'   '..-.          .-                _     _.   |     \\  '         |   | ' |--.\\  \\   
@@ -1695,16 +1680,528 @@ a:f        |  |        .__./    //  '\\  |//    '.\\ '\\ (  (  <'   ._  '
  `}
 </pre>
       </div>
-      <img src={image1} alt="lit pic2" className="image1" />
-      <img src={image2} alt="lit pic" className="image2" />
-      <img src={image3} alt="lit pi2c" className="image3" />
-      <img src={image4} alt="lit pi2c" className="image4" />
-      <img src={image5} alt="lit pi2c" className="image5" />
-      <img src={image6} alt="lit pi2c" className="image6" />
-      <img src={image7} alt="lit pi2c" className="image7" />
+      <div className="ascii-art-item" id="ascii-art-39">
+<pre>
+  {`
+
+                  ,,
+      _  -.      /(
+       \\,  \\    /  \\     /
+        )   \\(')  ,/   ,/
+        \\-,_(("))//   /
+ ,___,   '.,[_V_]"  _/    
+ '  ,"'-;;=,' v '.;;/
+           |' | '|'
+          ,|- | -|"-._
+         //| o|o |'"-.\\
+        '/ '/,|,\\'    |
+        |     "       |
+        |,           '(
+    ctr )              '.
+       /
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-40">
+<pre>
+  {`
+
+                           __
+                          [__]
+                          |  |
+                          |  |
+                          |  |
+                          |  |
+                          |  |
+             ,----.      /'-. \\
+            (      )    /-._|  \\
+            |'----'|   |        |
+            \\      /   |'-...   |
+             '.  ,'    |'' . |  |
+               ||      |','- |  |
+             ,-||-.    |'-...|  |
+            (  ''  )   |        |
+             '----'     '-....-'
+
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-41">
+<pre>
+  {`
+                                          _____________               
+                                          __/_|_|_|_|_|_|_\\__               
+                                         /                   \\    .           
+                    .       ____________/  ____               \\   :            
+                    :    __/_|_|_|_|_|_(  |    |               )  |           
+                    |   /               \\ | () |()  ()  ()  ()/   *          
+                    *  /  ____           \\|____|_____________/            
+       .              (  |    |            \\_______________/
+       :               \\ | () |()  ()  ()    \\___________/
+       |                \\|____|____________ /   \\______/     .
+       *                  \\_______________/       \\  /       :
+             3         .    \\___________/         (__)       |    .
+               3       :       \\______/           /  \\       *    :
+                3      |         \\  /            /    \\           |
+                 3     *         (__)           /      \\          *
+           ,,     3              /  \\          /        \\
+         w'\\v',___n___          /    \\        /          \\
+         v\\'|Y/      /\\        /      \\      /            \\
+         '-Y/-'_____/  \\      /        \\    /              \\
+          '|-'      |  |     /          \\  /                \\
+   ________|_|______|__|____/____________\\/__________________\\__
+
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-42">
+<pre>
+  {`
+            ________
+        _jgN########Ngg_
+      _N##N@@""  ""9NN##Np_
+     d###P            N####p
+     "^^"              T####
+                       d###P
+                    _g###@F
+                 _gN##@P
+               gN###F"
+              d###F
+             0###F
+             0###F
+             0###F
+             "NN@'
+
+              ___
+             q###r
+              ""
+
+ `}
+</pre>
+
+      </div>
+      <div className="ascii-art-item" id="ascii-art-43">
+<pre>
+  {`
+             :
+             ,         ,-':'-._             ,;
+              ', __..-'   :    '-.___...-,;'
+                ;,        :           ,;';
+                ; ',      :        ,;'   ;
+                ;   ', _.-:-,_  ,;'      ;
+                ;     ;,/\\:/\\,;'        ;
+                ;    ; /\\,O;/\\:         ;
+               ;    ,__/\\(+)/\\ ;        ;
+              .,_,--',  /; ;\\ '-,_      ',
+             -;      ", ;  _',,'  '-,_   ;
+              ;       ';-'' '-;       '-,_;
+               ;      ;        ',       ,-"-,_
+               ;     ;           ;     ,'
+                ;   ;             ',   ;
+                ;  ;     _.._       ; ;
+                 ;;  _.-'    '--..___;;
+                 ;.-'                  ;
+                ;'                      ',
+               ;                          ;
+              ;                            ltb
+             ;                               ;
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-44">
+<pre>
+  {`
+
+
+__________...----..____..-'''-..___
+,'.                                  '''--.._
+:                                             ''._
+|                           --                    ''.
+|                <o>   -.-      -.     -   -.        '.
+:                     __           --            .     \\
+'._____________     (  '.   -.-      --  -   .   '     \\
+   '-----------------\\   \\_.--------..__..--.._ '. '.   :
+                      '--'     SSt             '-._ .   |
+                                                   '.'  |
+                                                     \\' |
+                                                      \\ |
+                                                      / \\'.
+                                                     /  _\\-'
+                                                    /_,'
+
+
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-45">
+<pre>
+  {`
+
+
+               __ ___
+             .'. -- . '.
+            /U)  __   (O|
+           /.'  ()()   '.\\._
+         .',/;,_.--._.;;) . '--..__
+        /  ,///|.__.|.\\\\\\  \\ '.  '.''---..___
+       /'._ '' ||  ||  '' _'\\  :   \\   '   . '.
+      /        ||  ||        '.,    )   )   :  \\
+     :'-.__ _  ||  ||   _ __.' _\\_ .'  '   '   ,)
+     (          '  |'        ( __= ___..-._ ( (.\\\\
+    ('\\      .___ ___.      /'.___=          \\.\\.\\
+     \\\\\\-..____________..-'' pils
+
+
+ `}
+</pre>
+
+      </div>
+
+
+      <div className="ascii-art-item" id="ascii-art-46">
+<pre>
+  {`
 
 
 
+                      {}
+                     oIIo
+                     oIIo
+                      ||
+                      ||       I.
+                      ||       |:
+                     _||_      |:
+                   .' || '.    |:
+                  /   ||   \\   |:
+                 |    ::    |  |:
+                 )_   ::   _(  |:
+                  _)( :: )(_   |:
+                 ) ._)::(_. (  |:
+                /     II     \\ |:
+                |  .-.||     | |:
+                 \\(___)(    /  |:
+                  '.__\\/__.'   I'
+
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-47">
+<pre>
+  {`
+
+                                 _--._
+              ___-----___      ,'  .  '-
+          _,-'           '-._   ' ''_   '.
+        ,'.    --.     '':::.'.      '  ' )
+       /          '.           \\_     )   /
+     )' '._ ' ('    '-.    ._ __(__,-'_,-'
+     ;m   ,'     -##,  ""    "--_:  ""
+    : #   '      m ww =(\\   '    :\\ .
+    | '    (_           '       ' |(
+    |    .            '           / '
+    : '   '-.__    .            ) :
+   --'    oO '-'        ::     / ;
+  ( ::\\            ,##. '  ' ,' /
+   )_-_\\      \\     ''   /,-'  /
+       ''._    '   __,--'--'_,'
+           '-____     ___,-v     rjm
+            '    -----
+
+
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-48">
+<pre>
+  {`
+
+                  ____________                  
+           _.--""'            '""--._           
+       _.-'                          '-._       
+     .'              ______              '.     
+   .'         _.--""'      '""--._         '.   
+  .'        .'  ,<    \\_|  -v'    '.        '.  
+ .'        /   X_v \\|   \\_,-'  ,    \\        '. 
+ |       .' ,-<    /' . ( '  >'\\  ,- '.       | 
+ |/|     | V\\_ '--'  ')  \\_.   '\\_|   |     |\\| 
+ | |    .'/    ,_;==./   //'=:.   '\\,_'.    | | 
+ [ |--===<__,=={_,  ':=="' ,_ '===='/'>===--| ] 
+ | |    '.  '--v'\\,  '-,  -' >-.__x--'.'    | | 
+  \\|      '"--.__''       --' '__.--"'      |/  
+              \\_ '"\\"------"/hjm_/              
+                '"--|  --  |--"'                
+                    |      |                    
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-49">
+<pre>
+  {`
+          _              _
+          _.(_)..__________(_)
+       .''.'""""\\             "".
+      '-'/__     |_________..--..'
+            '.   ||  /    |  /
+              )  ;| (    (  (
+             /  //   |    |__|___
+            /   ||   |__.-'      '.
+          .:    |L.-'"             \\
+         |                         |
+         |            _            ;
+         |      _.-'/"_'"         /
+         '..__.T    ''           /
+               |                /
+               |               /
+                '.            /
+                  )--._      /
+                .'     \\    /
+               /        ;  /
+               |       / .'
+                '.__.-' /
+                    /   |
+                   /   /
+                  /   /
+                 /  .'
+   .__          /  /
+       "'-._  _/  /lka
+            ./   /-.
+             ////   |
+                    |
+                    |
+                
+ `}
+</pre>
+
+      </div>
+
+
+      <div className="ascii-art-item" id="ascii-art-50">
+<pre>
+  {`
+ .      .      .      .      .      .      .      .      .      .      .
+ .                               .       .       .       .       .       .
+    .        .        .        .        .        .        .        .        .
+      .         .         .        _......____._        .         .
+    .          .          . ..--'"" .           """"""---...          .
+                    _...--""        ................       '-.              .
+                 .-'        ...:'::::;:::%:.::::::_;;:...     '-.
+              .-'       ..::::'''''   _...---'"""":::+;_::.      '.      .
+   .        .' .    ..::::'      _.-""               :::)::.       '.
+          .      ..;:::'     _.-'         .             f::'::    o  _
+         /     .:::%'  .  .-"                        .-.  ::;;:.   /" "x
+   .   .'  ""::.::'    .-"     _.--'"""-.           (   )  ::.::  |_.-' |
+      .'    ::;:'    .'     .-" .d@@b.   \\    .    . '-'   ::%::   \\_ _/    .
+     .'    :,::'    /   . _'    8@@@@8   j      .-'       :::::      " o
+     | .  :.%:' .  j     (_)    '@@@P'  .'   .-"         ::.::    .  f
+     |    ::::     (        -..____...-'  .-"          .::::'       /
+ .   |    ':'::    '.                ..--'        .  .::'::   .    /
+     j     ':::::    '-._____...---""             .::%:::'       .'  .
+      \\      ::.:%..             .       .    ...:,::::'       .'
+  .    \\       ':::':..                ....::::.::::'       .-'          .
+        \\    .   '':::%::'::.......:::::%::.::::''       .-'
+       . '.        . ''::::::%::::.::;;:::::'''      _.-'          .
+   .       '-..     .    .   '''''''''         . _.-'     .          .
+          .    ""--...____    .   ______......--' .         .         .
+   .        .        .    """"""""     .        .        .        .        .
+  .       .       .       .       .       .       .       .       .
+      .      .      .      .      .      .      .      .      .      .      .
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-51">
+<pre>
+  {`
+
+     ^   sin x
+     |
+    ,|, 1    _....._
+     |    ,="       "=.
+     |  ,"             ".                           ,"
+     |,"        ,        ".,          ,          ,,"
+"""".*""""""""""|""""""""""|."""""""""|""""""""".|"""">
+  ." |                       ".               ." __    x
+,"   |                         "._         _,"   ||
+    ,|,                  sm       "-.....-"
+     |  -1
+     |
+
+ `}
+</pre>
+
+      </div>
+
+
+      <div className="ascii-art-item" id="ascii-art-52">
+<pre>
+  {`
+
+                                      ,-.. _. ,. ,._
+                                  .-'         .     '.
+                                 /             .      /_./.
+                                '                        '.
+                               .                           '
+                              '            =\\ : , \\         \\
+                             '            '' '   '  =        '
+                             |,.        _\\           ',       \\
+                             /   \\    ."               ',.    /
+                            || ,' '  ,                  ' \\_.'
+                            |\\ -. / ,       ''":,      /
+                          ,-= .   ,'       '_   ';.    |
+                         /  /  -'            "''    ,:,
+                      _,/|,'    ,                   '
+               ___,--' | |                    (    /
+          _,-''        . .      .            , '- _'          .-.
+        ,'              \\        .       ','"'';/.          ,'   )
+      ,'                 .'       :     /  ';\\\\   '.     ,'    .'
+    ,'                   |.\\       ';.'.,. .;.\\\\  ,..:_'_    .
+   /  .                    '.       .'';_:;''  '_(        ' '-.
+   |   .                     '.'.,-'   ,       (    '" - ._    )
+  / .   '                      '.             _,'-._        ' (
+ /    .       [lf]             _ |   '      .' '.    ' .  _    )
+                              (:)          '      '        '   '
+
+
+ `}
+</pre>
+
+      </div>
+      <div className="ascii-art-item" id="ascii-art-53">
+<pre>
+  {`
+
+                                  ____
+                                _(    )_
+                               (  _ _   )
+                                (_")" __)
+                                  \\=_/   
+                                   _)\\___
+                                  /-----'\\
+                                 ((  (    \\       (
+                                 |_\\   /\\__\\       )
+                                  //)  |   \\\\     (
+                               __//(____\\   \\\\     )
+                              /_,/ |     \\   \\\\_
+                                   |    | )  /-,|=*
+                                   |____A_|
+                                   | |   |
+                                   | |  / 
+                                   ( ( <
+                                   | \\\\ \\
+                                   | | \\ |
+                                   |/   \\|__
+                                   |\\    \\(
+                              gnv__/|    _\\)
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-54">
+<pre>
+  {`
+
+                   .+'"+
+                  ,   b '
+                  (      +
+                  ' '+,.+ '.
+                   '  .  ': .
+                    '  .   '.+
+                     '  +    ':.
+                     ;   '     '.
+                ..,,+     '
+             .+'          '
+           +'             '
+          '              '
+         +             .'
+        .
+                   '  '
+       '        ,+' .'
+      +      .+'   +
+     '     .'     +
+    +   .+'  _.,+''
+   '  ,' .+''    /
+   '-'.+'       /
+   '-'         |
+               |
+               b
+               |
+               |
+               |
+               |
+               |                      
+               |                      
+             .,|-,..              
+
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-55">
+<pre>
+  {`
+
+          
+  -      __
+     - -    @%o.            _
+  - - _ _  %%'.'&  __     _//
+           %b  ~ %'  ""--" ,'
+        =#=,-%%%"    _   _-'
+   _,    .'         \\ "-"
+  (_|"-.' .'\\   '.   \\
+     \\__.'   \\        \\        _ _ - -..__
+              \\   '.  _\\__--"""           "-,_
+  "--.._       \\,--,-" |        --""--.._     "
+ ,'"'_(.--""   /  /   |   __             ""::--""
+(  (      )   (   (   \\     ""- .  __..--""  .-'
+ \\   \\ ( .. )  \\   \\   /\\________         \\,'  ."
+ - ( _ )  __,,--\\   \\_/|/ __  __ ""-,     ;  ,'
+- -.    ,'_ _ _  \\_/ (_/ /_/ / _ .-':    ,' ,'
+; ' ' ,'         (_/    /   |__/ _,'  ,'
+PGMG '"""""----____________..--"" _  _ _ __
+
+
+
+ `}
+</pre>
+
+      </div>
+
+      <div className="ascii-art-item" id="ascii-art-56">
+<pre>
+  {`
+
+    ,o888b,'?88888          Matthew  Porteous        88888P',d888o,
+  ,8888 888   ?888         matthewporteous.com       888P   888 8888,
+  8888888P'    888                                   888    '?8888888
+  888P'        888               Peace!              888        '?888
+  '88   O     d888    (Through superior firepower)   888b     O   88'
+    '?._  _.o88888                                   88888o._  _.P'
+
+
+ `}
+</pre>
+
+      </div>
+    
       
     </div>
 

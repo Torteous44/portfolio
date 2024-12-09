@@ -10,6 +10,7 @@
     font-size: 14px; 
     color: #000; 
     user-select: none;
+    z-index: 100000;
   }
   
 
@@ -22,7 +23,7 @@
   /* cupid */
   #ascii-art-2 {
     top: 66.4%;
-    right: 20%;
+    left: 70%;
     font-size:12px;
   }
 
@@ -35,7 +36,7 @@
   
   #ascii-art-4 {
     top: 64.5%;
-    right: 70%;
+    left: 10%;
     font-size: 12px;
 
   }
@@ -68,19 +69,19 @@
 
   #ascii-art-9 {
     top: 63.4%;
-    right: 40%;
+    left: 70%;
     font-size: 6px;
   }
 
   #ascii-art-10 {
     top: 67.5%;
-    right: 55%;
+    left: 35%;
     font-size: 6px;
   }
   
   #ascii-art-11 {
     top: 62%;
-    right: 65%;
+    left: 15%;
     font-size: 7px;
   }
     
@@ -99,14 +100,14 @@
 
   #ascii-art-14 {
     top: 66%;
-    right: 60%;
+    left: 0%;
     font-size: 15px;
   }
   
 
   #ascii-art-15 {
     top: 69%;
-    right: 60%;
+    left: 20%;
     font-size: 9px;
   }
 
@@ -214,14 +215,14 @@
   
   
   #ascii-art-33 {
-    top: 53.4%;
+    top: 54.9%;
     left: 20%;
     font-size: 6px;
 
   }
   
   #ascii-art-34 {
-    top: 55.9%;
+    top: 56.3%;
     left: 70%;
     font-size: 6px;
 
@@ -253,65 +254,126 @@
     font-size: 5px;
 
   }
-  
-  
-/* Relative Container for Positioning */
-.image-container {
-    position: relative; /* Make this the positioning context */
-    width: 500px;
-    height: 300px;
-    background-color: #f9f9f9;
+
+  #ascii-art-39 {
+    top: 78%;
+    left: 15%;
+    font-size: 6px;
+
+  }
+  #ascii-art-40 {
+    top: 77.2%;
+    left: 26%;
+    font-size: 6px;
+
+  }
+
+  #ascii-art-41 {
+    top: 83.1%;
+    left: 2%;
+    font-size: 6px;
+
+  }
+
+  #ascii-art-42 {
+    top: 77.2%;
+    left:50%;
+    font-size: 10px;
+font-weight: 100;
   }
   
-  /* Individual Images */
-  .image1 {
-    position: absolute;
-    top: 90%;
-    left: 10px;
-    width: 300px;
-    height: auto;
+  #ascii-art-43 {
+    top: 77.4%;
+    left:76.2%;
+    font-size: 6px;
+font-weight: 100;
   }
-  
-  .image2 {
-    position: absolute;
-    top: 89%;
-    left: 150px;
-    width: 300px;
-    height: auto;
+
+  #ascii-art-44 {
+    top: 78.7%;
+    left:4%;
+    font-size: 5px;
+font-weight: 100;
   }
-  
-  .image3 {
-    position: absolute;
-    bottom: 10%;
-    right: 10px;
-    width: 300px;
-    height: auto;
+  #ascii-art-45 {
+    top: 79.3%;
+    left:7%;
+    font-size: 8px;
+font-weight: 100;
   }
-  .image4 {
-    position: absolute;
-    bottom: 9%;
-    right: 196px;
-    width: 290px;
-    height: auto;
+  #ascii-art-46 {
+    top: 77.1%;
+    left:3%;
+    font-size: 8px;
+font-weight: 100;
   }
-  .image5 {
-    position: absolute;
-    bottom: 11%;
-    right: 500px;
-    width: 290px;
-    height: auto;
-  }  
-  .image6 {
-    position: absolute;
-    bottom: 8.3%;
-    right: 400px;
-    width: 270px;
-    height: auto;
+  #ascii-art-47 {
+    top: 75.1%;
+    left:3%;
+    font-size: 8px;
+font-weight: 100;
   }
-  .image7 {
-    position: absolute;
-    bottom: 7.3%;
-    right: 750px;
-    width: 240px;
-    height: auto;
+
+  #ascii-art-48 {
+    top: 79.8%;
+    left:80%;
+    font-size: 8px;
+font-weight: 100;
+  }
+
+  #ascii-art-49 {
+    top: 80.3%;
+    left:18%;
+    font-size: 12px;
+font-weight: 100;
+  }
+
+  #ascii-art-50 {
+    top: 80.8%;
+    left:54%;
+    font-size: 13px;
+font-weight: 100;
+  }
+
+
+  #ascii-art-51 {
+    top: 80%;
+    left:45%;
+    font-size: 8px;
+font-weight: 100;
+  }
+
+  #ascii-art-52 {
+    top: 82%;
+    left:3%;
+    font-size: 6px;
+font-weight: 100;
+  }
+
+  #ascii-art-53 {
+    top: 82%;
+    left:30%;
+    font-size: 6px;
+font-weight: 100;
+  }
+
+  #ascii-art-54 {
+    top: 80.5%;
+    left:5%;
+    font-size: 6px;
+font-weight: 100;
+  }
+
+  #ascii-art-55 {
+    top: 82.7%;
+    left:23%;
+    font-size: 6px;
+font-weight: 100;
+  }
+
+  #ascii-art-56 {
+    top: 82.7%;
+    left:47%;
+    font-size: 16px;
+font-weight: 100;
   }
