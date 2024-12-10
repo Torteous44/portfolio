@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.af47e69f.css",
-    "main.js": "/static/js/main.f878d789.js",
+    "main.css": "/static/css/main.0551033b.css",
+    "main.js": "/static/js/main.dff0e360.js",
     "static/media/tropicbirds.mp3": "/static/media/tropicbirds.f4e8adf43cac986245e4.mp3",
     "static/media/Deceptacon.mp3": "/static/media/Deceptacon.a0f928e3810be31496d6.mp3",
     "static/media/Prim.mp3": "/static/media/Prim.a4e9c53d8816d07cdfd4.mp3",
@@ -33,11 +33,11 @@
     "static/media/LarkenDEMO-Regular.otf": "/static/media/LarkenDEMO-Regular.eb993a16e5e5423b14a1.otf",
     "static/media/LarkenDEMO-Light.otf": "/static/media/LarkenDEMO-Light.1d3bfb1ba794972fdfc5.otf",
     "index.html": "/index.html",
-    "main.af47e69f.css.map": "/static/css/main.af47e69f.css.map",
-    "main.f878d789.js.map": "/static/js/main.f878d789.js.map"
+    "main.0551033b.css.map": "/static/css/main.0551033b.css.map",
+    "main.dff0e360.js.map": "/static/js/main.dff0e360.js.map"
   },
   "entrypoints": [
-    "static/css/main.af47e69f.css",
-    "static/js/main.f878d789.js"
+    "static/css/main.0551033b.css",
+    "static/js/main.dff0e360.js"
   ]
 }
