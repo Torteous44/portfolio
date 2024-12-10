@@ -63,12 +63,6 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     };
 
     draw();
-    
-    const handleSongEnd = () => {
-      playNextTrack();
-    };
-
-    audioElement.addEventListener("ended", handleSongEnd);
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
@@ -185,10 +179,11 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     fontSize: "12px", // Smaller text size
     margin: "10px", 
     marginBottom: '0px',
-    height: "420px", // Fixed height for the list
+    height: "380px", // Fixed height for the list
     scrollbarWidth: "thin", // For Firefox
     scrollbarColor: "#555 #e0e0e0", // Thumb and track colors for Firefox
-    transform: 'translateY(175px)',
+    transform: 'translate(-40px,170px)',
+
     cursor: 'none' ,
 
   }}
