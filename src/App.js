@@ -462,6 +462,7 @@ function App() {
         }}>
         <section id="about" className="section" ref={aboutRef}>
           <h2>About Me</h2>
+          
           <p>
             I’m a developer with a passion for building innovative software solutions that seamlessly blend technology with real-world impact. I specialize in crafting clean, efficient code and designing intuitive user experiences, always focusing on performance and scalability.
           </p>
@@ -474,9 +475,10 @@ function App() {
           <p>
             Outside of coding, I enjoy exploring new technologies, staying active, and immersing myself in music and nature.
           </p>
+
         </section>
 
-        <section id="projects" className="section">
+        <section id="projects" className="section" ref={projectsRef}>
   <div className="projects-header">
     <h2>Projects</h2>
     <label className="container">

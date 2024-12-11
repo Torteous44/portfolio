@@ -182,7 +182,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     height: "380px", // Fixed height for the list
     scrollbarWidth: "thin", // For Firefox
     scrollbarColor: "#555 #e0e0e0", // Thumb and track colors for Firefox
-    transform: 'translate(-40px,170px)',
+    transform: 'translate(-40px,190px)',
 
     cursor: 'none' ,
 

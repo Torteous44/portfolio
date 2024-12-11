@@ -144,7 +144,7 @@ body.light-mode .toc a.active {
   margin-bottom: 20px;
   color: var(--text-color);
   font-family: var(--font-family-heading);
-  font-weight: 650;
+  font-weight: 550;
   transition: color var(--transition-duration);
   
 }
@@ -376,8 +376,8 @@ body.dark-mode .footer {
   background-color: var(--background-color); 
   padding: 6px 10px;
   border-radius: 8px;
-  border: 1px solid var(--background-color);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  border: 0.5px solid var(--text-color);
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out; 
   z-index: 100000;
 }
@@ -424,18 +424,18 @@ body.light-mode .theme-toggle-wrapper {
 }
 
 body.light-mode .theme-toggle-text {
-  font-size: 14px; 
+  font-size: 13px; 
   font-weight: 450;
   padding-top: 2px; 
   color: var(--text-color); 
-  font-family: 'larkenlight', sans-serif;
+  font-family: var(--font-family-heading);
 }
 
 /* Dark Mode Specific Styling */
 body.dark-mode .theme-toggle-wrapper {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-color);
-  
+  border: 0px;
 }
 
 body.dark-mode .theme-toggle-text {
@@ -480,8 +480,8 @@ body.dark-mode .theme-toggle-text {
   min-width: 20px;
   z-index: 2147483647; 
   font-family: var(--font-family-regular);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
-
+  box-shadow: 0px 1.3px 4px rgba(0, 0, 0, 0.2); 
+  border: 0.5px solid var(--text-color)
 }
 
 #counter-tooltip:hover {
@@ -547,6 +547,7 @@ body.dark-mode #counter-tooltip {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff; 
   padding-top: 3px;
+  border: 0px;
 }
 
 body.dark-mode #counter-tooltip .tooltip {
@@ -823,5 +824,5 @@ body.light-mode .container{
 
 .projects-header h2 {
   margin: 10;
-  font-size: 28px;
+  font-size: 34.5px;
 }
