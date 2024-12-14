@@ -28,6 +28,8 @@ import Prim from './music/Prim.mp3';
 import pinCycle from './music/pinCycle.mp3';
 import deceptacon from './music/Deceptacon.mp3';
 import DateAsciiArt from './components/date';
+import deadDog from './music/DeadDogsSkin.mp3';
+import electronicShop from './music/electronicShop.mp3';
 
 
 function App() {
@@ -43,7 +45,7 @@ function App() {
 
   const [musicPlaying, setMusicPlaying] = useState(false);
 
-  const playlist = [RedMusic, DreamDeath, OutCasts, Grandma, Forget, SendMe, TropicBirds, Twenny, UrEyes, Giggle, wombCore, silver, Prim, pinCycle, deceptacon ];
+  const playlist = [RedMusic, DreamDeath, OutCasts, Grandma, Forget, SendMe, TropicBirds, Twenny, UrEyes, Giggle, wombCore, silver, Prim, pinCycle, deceptacon, deadDog, electronicShop ];
   const [showAllProjects, setShowAllProjects] = useState(false);
 
   const [easterEggActive, setEasterEggActive] = useState(false);
@@ -306,7 +308,7 @@ function App() {
     
     {
       title: 'Terminal-Based Chat Application in C',
-      description: 'A real-time multi-client chat application built using C with support for public and private chat rooms, direct messaging, and user management. The application uses socket programming and multithreading for seamless communication between the server and multiple clients.',
+      description: 'A real-time multi-client chat application built in C, supporting public/private chat rooms, direct messaging, and user management. It uses socket programming and multithreading for seamless server-client communication.',
       image: require('./assets/images/terminalchat.png'),
       technologies: ['C', 'Socket Programming', 'Multithreading'],
       githubLink: 'https://github.com/Torteous44/TerminalChat',
@@ -341,6 +343,12 @@ function App() {
     scrollToSection(sectionRef);
   };
 
+  
+  
+  
+  
+  
+  
   return (
 <div
   className="app-container"
@@ -434,14 +442,12 @@ function App() {
     </div>
 
         <button className="theme-toggle-wrapper" onClick={toggleTheme}>
-  <span className="theme-toggle-text">
+  {/* <span className="theme-toggle-text">
     {theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
-  </span>
+  </span> */}
   <div
     className="theme-toggle-circle"
-    style={{
-      backgroundColor: theme === 'dark' ? '#fff' : '#000',
-    }}
+
   ></div>
 </button>
 
@@ -2399,7 +2405,7 @@ PGMG '"""""----____________..--"" _  _ _ __
       }}
     >
       {/* Audio Element */}
-      <audio ref={audioRef} src={RedMusic} loop></audio>
+      <audio ref={audioRef} src={RedMusic}></audio>
       {/* Visualizer Component */}
       <MusicVisualizer audioElement={audioRef.current} playlist={playlist}/>
     </div>

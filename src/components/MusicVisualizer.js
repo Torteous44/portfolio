@@ -1,9 +1,38 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 
 const MusicVisualizer = ({ audioElement, playlist }) => {
   const canvasRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+
+  // Memoize playNextTrack with useCallback
+  const playNextTrack = useCallback(() => {
+    const nextIndex = (currentTrackIndex + 1) % playlist.length;
+    setCurrentTrackIndex(nextIndex);
+
+    // Set the new track and ensure it plays when ready
+    audioElement.src = playlist[nextIndex];
+    audioElement.load(); // Ensure the new source is loaded
+    audioElement
+      .play()
+      .catch((error) => console.error("Error playing the next track:", error));
+  }, [currentTrackIndex, playlist, audioElement]);
+
+  useEffect(() => {
+    if (!audioElement) return;
+
+    const handleTrackEnd = () => {
+      playNextTrack();
+    };
+
+    // Attach the 'ended' event listener to the audio element
+    audioElement.addEventListener("ended", handleTrackEnd);
+
+    return () => {
+      // Cleanup: remove the event listener
+      audioElement.removeEventListener("ended", handleTrackEnd);
+    };
+  }, [audioElement, playNextTrack]);
 
   useEffect(() => {
     if (!audioElement) return;
@@ -78,15 +107,6 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
     }
     setIsPlaying(!isPlaying);
   };
-
-  const playNextTrack = () => {
-    const nextIndex = (currentTrackIndex + 1) % playlist.length;
-    setCurrentTrackIndex(nextIndex);
-    audioElement.src = playlist[nextIndex];
-    audioElement.play();
-    setIsPlaying(true);
-  };
-
   return (
     <div
       style={{
@@ -220,6 +240,7 @@ const MusicVisualizer = ({ audioElement, playlist }) => {
           border: "1px solid #ddd", // Add a border for each item
           borderRadius: "5px",
           whiteSpace: "normal", // Allow text wrapping
+          wordBreak: "break-word", // Handle long words gracefully
 
           cursor: 'none' ,
         }}
