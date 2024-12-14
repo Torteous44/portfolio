@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bcf88272.css",
-    "main.js": "/static/js/main.23780292.js",
+    "main.js": "/static/js/main.4de12f58.js",
     "static/media/tropicbirds.mp3": "/static/media/tropicbirds.f4e8adf43cac986245e4.mp3",
     "static/media/Deceptacon.mp3": "/static/media/Deceptacon.a0f928e3810be31496d6.mp3",
     "static/media/Prim.mp3": "/static/media/Prim.a4e9c53d8816d07cdfd4.mp3",
@@ -15,7 +15,9 @@
     "static/media/urEyes.mp3": "/static/media/urEyes.48d99c45c2c580c27591.mp3",
     "static/media/Giggle.mp3": "/static/media/Giggle.8d2ed873d2b38da0aaa7.mp3",
     "static/media/sendme.mp3": "/static/media/sendme.9373a0729d9fbec7aabe.mp3",
+    "static/media/electronicShop.mp3": "/static/media/electronicShop.545754cb4aca29594de9.mp3",
     "static/media/grandma.mp3": "/static/media/grandma.925470509b97fd6d8d03.mp3",
+    "static/media/DeadDogsSkin.mp3": "/static/media/DeadDogsSkin.b8e5686905efb0d9f494.mp3",
     "static/media/dreamdeath.mp3": "/static/media/dreamdeath.c38f0f427d60754597e5.mp3",
     "static/media/expense-manager.png": "/static/media/expense-manager.7154a4f5c8f9136ebf1a.png",
     "static/media/OffBitTrial-DotBold.ttf": "/static/media/OffBitTrial-DotBold.66d44c5209c0e9360baa.ttf",
@@ -36,10 +38,10 @@
     "static/media/LarkenDEMO-Light.otf": "/static/media/LarkenDEMO-Light.1d3bfb1ba794972fdfc5.otf",
     "index.html": "/index.html",
     "main.bcf88272.css.map": "/static/css/main.bcf88272.css.map",
-    "main.23780292.js.map": "/static/js/main.23780292.js.map"
+    "main.4de12f58.js.map": "/static/js/main.4de12f58.js.map"
   },
   "entrypoints": [
     "static/css/main.bcf88272.css",
-    "static/js/main.23780292.js"
+    "static/js/main.4de12f58.js"
   ]
 }
